@@ -9,7 +9,7 @@ basicHttpPersonaliseraEndpoint\KortPersonaliserat.xml
 basicHttpPersonaliseraEndpoint\PersonaliseringsunderlagHamtat.xml
 basicHttpPersonaliseraEndpoint\PinDistribuerad.xml
 basicHttpPersonaliseraEndpoint\SkapaTestkort.xml
-NF-SC01-%5BStartvillkor%5D\TestCase-A_F1_Forvillkor-NF.xml
+NF-SC01-%5BStartvillkor%5D\TestCase_A_Forvillkor-NF.xml
 NF-SC01-%5BStartvillkor%5D\TestCase-A.F1_Ansokan-ar-inkommen-e-tjanst.xml
 AUTO-SC01-NF\AF1_s2_Reg-Ansokan.xml
 AUTO-SC01-NF\AF1_s2_Reg_Ansokanhandelse.xml

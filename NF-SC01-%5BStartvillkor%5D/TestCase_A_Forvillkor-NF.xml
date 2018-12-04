@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="5b3d1248-756c-4667-b793-4122e8343288" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase A_F1_Forvillkor NF" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="5b3d1248-756c-4667-b793-4122e8343288" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase_A_Forvillkor NF" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="5b3d1248-756c-4667-b793-4122e8343288fileName">TestCase-A_F1_Forvillkor-NF</con:setting>
+    <con:setting id="5b3d1248-756c-4667-b793-4122e8343288fileName">TestCase_A_Forvillkor-NF</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="manualTestStep" name="DB Settings TACHOnetUrvalProcentsats" id="12168430-c88f-464d-b1ee-6a3d76d8ad41">
