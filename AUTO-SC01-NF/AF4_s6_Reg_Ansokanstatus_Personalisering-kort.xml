@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="686bf272-1d79-443f-ba31-a4348b3f8420" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF4_s6_Reg_Ansokanstatus_Personalisering kort" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="686bf272-1d79-443f-ba31-a4348b3f8420fileName">AF4_s6_Reg_Ansokanstatus_Personalisering-kort</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="jdbc" name="TestStep_Personaliering kort - JDBC Request" id="95523947-936b-4159-8f98-8be13824f53e">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokanstatus.*, Ansokan.PersonId
+From Ansokanstatus Inner Join
+  Ansokan On Ansokanstatus.Id = Ansokan.AnsokanstatusId
+Where Ansokan.PersonId = :PID_1 And Ansokanstatus.Id = 'PersonaliseringKort'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="2673d413-f234-461f-bec0-2b2bcb348121" name="Match content of [Id]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Id[1]/text()</path>
+          <content>PersonaliseringKort</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="fec13f2b-649c-4c92-84f9-a7a95b8d4299">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>e247d951-5e39-4af9-9847-cdd26f9bea08</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>fec13f2b-649c-4c92-84f9-a7a95b8d4299</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>5ce2f2c6-6428-471f-954b-d9efeae7b0a3</con:tagId>
+</con:testCase>

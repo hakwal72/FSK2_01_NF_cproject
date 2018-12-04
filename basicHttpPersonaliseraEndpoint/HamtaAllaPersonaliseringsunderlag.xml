@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="42cbffb5-819b-4af8-b284-c6bf84da5883" isOneWay="false" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_HamtaAllaPersonaliseringsunderlag" name="HamtaAllaPersonaliseringsunderlag" bindingOperationName="HamtaAllaPersonaliseringsunderlag" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="42cbffb5-819b-4af8-b284-c6bf84da5883fileName">HamtaAllaPersonaliseringsunderlag</con:setting>
+  </con:settings>
+  <con:call id="6e5ccbc6-1bc2-4a7a-b8a5-cda8e809f996" name="Request 1">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:HamtaAllaPersonaliseringsunderlag/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_HamtaAllaPersonaliseringsunderlag"/>
+    <con:wsrmConfig version="1.2"/>
+    <con:environmentSpec>
+      <con:entry environmentId="a058e6c6-b56c-4e48-99de-eb3a828d2205">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:call>
+</con:operation>

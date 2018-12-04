@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="e02ba5f4-3652-4418-bb8f-14a5b3fea103" isOneWay="false" action="urn:bas:fardskrivarkortyt:IFardskrivarkortYtService_RegistreraAnsokan" name="RegistreraAnsokan" bindingOperationName="RegistreraAnsokan" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e02ba5f4-3652-4418-bb8f-14a5b3fea103fileName">RegistreraAnsokan</con:setting>
+  </con:settings>
+  <con:call id="f4ea2c78-feb9-4193-90a7-8b925f3ffde0" name="RegistreraAnsokan Request">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/FardskrivarkortYt1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:RegistreraAnsokan>
+         <!--Optional:-->
+         <_0:ansokanDto>
+            <_0:Personnummer>?</_0:Personnummer>
+            <_0:UtfardandeLandForarkort>?</_0:UtfardandeLandForarkort>
+            <!--Optional:-->
+            <_0:UtlandsktForarkortsnummer>?</_0:UtlandsktForarkortsnummer>
+            <_0:Telefonnummer>?</_0:Telefonnummer>
+            <_0:Epost>?</_0:Epost>
+            <_0:UtfardandeOrsak>?</_0:UtfardandeOrsak>
+            <_0:EjErsattningskort>?</_0:EjErsattningskort>
+            <!--Optional:-->
+            <_0:Fardskrivarkortsnummer>?</_0:Fardskrivarkortsnummer>
+            <_0:PrisPerKort>100</_0:PrisPerKort>
+         </_0:ansokanDto>
+      </_0:RegistreraAnsokan>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IFardskrivarkortYtService_RegistreraAnsokan"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

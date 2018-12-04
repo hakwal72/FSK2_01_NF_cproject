@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="2d437de4-55f1-44fd-9497-d8f4152341f8" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF2_s4_Reg_GenomfordKontroll_KK behorigheter[Basvillkor]" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>4 Kontroll av beh?righeter f?r den s?kande.</con:description>
+  <con:settings>
+    <con:setting id="2d437de4-55f1-44fd-9497-d8f4152341f8fileName">AF2_s4_Reg_GenomfordKontroll_KK-behorigheter%5BBasvillkor%5D</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_KorkortsBehorigheter - JDBC Request" id="0035a4d3-59e3-4418-a82a-9bafa4467438">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select GenomfordKontroll.*, Ansokan.PersonId
+From GenomfordKontroll Inner Join
+  Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
+  And GenomfordKontroll.KontrolltypId = 'KorkortsBehorigheter'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="JDBC Status" id="84985e58-52a1-4a71-af1e-4daf65ef6bf4" name="JDBC Status"/>
+      <con:assertion type="XPath Match" id="dce2ad84-b4f2-41d7-bc73-80162d26634d" name="Match content of [KontrolltypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KontrolltypId[1]/text()</path>
+          <content>KorkortsBehorigheter</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="77348c54-098c-4b7a-9ce1-9f2488c15ac0" name="Match content of [ManuellHandlaggningKravs]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ManuellHandlaggningKravs[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="4425466b-42de-4bb6-b053-4067de55e02e">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>50ea1e58-973d-4a9b-9ae8-c56c606f4ce5</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>753cb717-4a8e-4c3b-8797-6cc0fb128010</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>4425466b-42de-4bb6-b053-4067de55e02e</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+</con:testCase>

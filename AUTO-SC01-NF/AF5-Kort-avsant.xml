@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="81eee0c7-1175-4c43-b300-4958bf35564e" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5 Kort avsant" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="81eee0c7-1175-4c43-b300-4958bf35564efileName">AF5-Kort-avsant</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="request" id="851ea8b4-4381-491e-a236-36328f868ae9" name="KortAvsant - Request 1">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>basicHttpPersonaliseraEndpoint</con:interface>
+      <con:operation>KortAvsant</con:operation>
+      <con:request name="KortAvsant - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5320c12e-457a-4c43-9b55-3eaf142984cc">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:KortAvsant>
+         <!--Optional:-->
+         <_0:kortnummerMedIndex>${#[AUTO SC01 NF#AF5_HamtaKortnummerMedIndex#Property KortnummerMedIndex]#KortnummerMedIndex}</_0:kortnummerMedIndex>
+         <!--Optional:-->
+         <_0:datum>${=(new Date().format("yyy-MM-dd'T'HH:mm:ss.SSS'z'"))}</_0:datum>
+         <!--Optional:-->
+         <_0:reknummer>${#Global#PID_1_REKNR}</_0:reknummer>
+      </_0:KortAvsant>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="XPath Match" id="06204bc2-6945-4c81-a0bb-e8a641f66b7f" name="Match content of [KortAvsantResult]">
+          <con:configuration>
+            <path>declare namespace ns1='http://TS.FardskrivarkortYt.Schemas/1_0';
+//ns1:KortAvsantResponse[1]/ns1:KortAvsantResult[1]/text()</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_KortAvsant"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="a058e6c6-b56c-4e48-99de-eb3a828d2205">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay1" id="3545ece0-0488-407e-a0af-d39b69f3d0eb">
+    <con:settings/>
+    <con:config>
+      <delay>15000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Korthandelse Kort avsant - JDBC Request" id="46beaed6-d6e2-4604-9072-6d43bd1dd6cc">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Korthandelse.*
+From Korthandelse Inner Join
+  Kort On Kort.Id = Korthandelse.KortId
+Where Korthandelse.KorthandelsetypId = 'Avsant' And Kort.PersonId = :PID_1</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="2a8dc261-a2a7-4715-924d-6e61ed780b72" name="Match content of [KorthandelsetypId] Avsant">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KorthandelsetypId[1]/text()</path>
+          <content>Avsant</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="c57d27da-fbed-406f-bf6a-cfec1a19b2e4">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Kortstatus_Avsant (TACHO) - JDBC Request 2" id="19f5aca0-6341-4db6-ab1b-bb814b2ac86f">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Kort.*, Ansokan.PersonId
+From Kort Inner Join
+  Ansokan On Ansokan.Id = Kort.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Kort.KortstatusId = 'Avsant'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="d6373318-47df-4569-b21f-b4c6a9fdfde2" name="Match content of [KortstatusId] Personaliserat">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KortstatusId[1]/text()</path>
+          <content>Avsant</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>aee608ca-4624-462b-bec5-aa62716bf2fe</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>2f3a5b24-3e1e-48fd-b1f9-0db7a9725a57</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f3f871f2-4696-4139-b448-dfe206169079</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>c57d27da-fbed-406f-bf6a-cfec1a19b2e4</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="7ef40bdb-a0df-42a9-be4c-b2d9a2d83d1d" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5 PersonaliseringsunderlagHamtat" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7ef40bdb-a0df-42a9-be4c-b2d9a2d83d1dfileName">AF5-PersonaliseringsunderlagHamtat</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="request" id="4c76d6f5-6ca7-49c5-968d-e9842dd73fd3" name="KvitteraPersonaliseringsunderlag - Request 1">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>basicHttpPersonaliseraEndpoint</con:interface>
+      <con:operation>PersonaliseringsunderlagHamtat</con:operation>
+      <con:request name="KvitteraPersonaliseringsunderlag - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5746f31b-1f8e-4259-8a11-3aaf01eeca67">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:PersonaliseringsunderlagHamtat>
+         <!--Optional:-->
+         <_0:kortnummerMedIndex>${#[AUTO SC01 NF#AF5_HamtaKortnummerMedIndex#Property KortnummerMedIndex]#KortnummerMedIndex}</_0:kortnummerMedIndex>
+         <!--Optional:-->
+         <_0:datum>${=(new Date().format("yyy-MM-dd'T'HH:mm:ss.SSS'z'"))}</_0:datum>
+      </_0:PersonaliseringsunderlagHamtat>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="XPath Match" id="a2ef1be2-c608-4f19-9103-7a14be14f804" name="Match content of [PersonaliseringsunderlagHamtatResult]">
+          <con:configuration>
+            <path>declare namespace ns1='http://TS.FardskrivarkortYt.Schemas/1_0';
+//ns1:PersonaliseringsunderlagHamtatResponse[1]/ns1:PersonaliseringsunderlagHamtatResult[1]/text()</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_KvitteraPersonaliseringsunderlag"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="a058e6c6-b56c-4e48-99de-eb3a828d2205">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay1" id="68e097b7-68cd-4b07-9a7e-c73872f65338">
+    <con:settings/>
+    <con:config>
+      <delay>15000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Korthandelse Personaliseringsunderlag hamtat - JDBC Request" id="dfdde15a-75cd-45c4-b58a-09819f8a3a5f">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Korthandelse.*
+From Korthandelse Inner Join
+  Kort On Kort.Id = Korthandelse.KortId
+Where Korthandelse.KorthandelsetypId = 'PunderlagHamtat' And
+  Kort.PersonId = :PID_1</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="2a8dc261-a2a7-4715-924d-6e61ed780b72" name="Match content of [KorthandelsetypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KorthandelsetypId[1]/text()</path>
+          <content>PunderlagHamtat</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="797fa108-6ad1-438c-9c29-90ac9ced5c33">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Kortstatus_Under personalisering - JDBC Request 2" id="73045fbc-3df2-4e46-a25d-18a52e55d766">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Kort.*, Ansokan.PersonId
+From Kort Inner Join
+  Ansokan On Ansokan.Id = Kort.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Kort.KortstatusId = 'UnderPersonalisering'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="d6373318-47df-4569-b21f-b4c6a9fdfde2" name="Match content of [KortstatusId] UnderPersonalisering">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KortstatusId[1]/text()</path>
+          <content>UnderPersonalisering</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 2" id="93f190d0-1511-4a8f-b471-f1f99b9e27c0">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>aee608ca-4624-462b-bec5-aa62716bf2fe</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>797fa108-6ad1-438c-9c29-90ac9ced5c33</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>93f190d0-1511-4a8f-b471-f1f99b9e27c0</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

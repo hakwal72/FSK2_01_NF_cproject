@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="c267b582-f8d3-4b87-b8f1-f229b02a5698" isOneWay="false" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_PinDistribuerad" name="PinDistribuerad" bindingOperationName="PinDistribuerad" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c267b582-f8d3-4b87-b8f1-f229b02a5698fileName">PinDistribuerad</con:setting>
+  </con:settings>
+  <con:call id="2dff736f-3386-42b1-8ca5-6b425b15445e" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:PinDistribuerad>
+         <!--Optional:-->
+         <_0:kortnummerMedIndex>?</_0:kortnummerMedIndex>
+         <!--Optional:-->
+         <_0:datum>?</_0:datum>
+      </_0:PinDistribuerad>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_PinDistribuerad"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

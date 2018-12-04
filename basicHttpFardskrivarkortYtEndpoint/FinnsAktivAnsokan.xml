@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="94d7a0aa-c98b-4a52-9d7b-698f6522a1fa" isOneWay="false" action="urn:bas:fardskrivarkortyt:IFardskrivarkortYtService_FinnsAktivAnsokan" name="FinnsAktivAnsokan" bindingOperationName="FinnsAktivAnsokan" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="94d7a0aa-c98b-4a52-9d7b-698f6522a1fafileName">FinnsAktivAnsokan</con:setting>
+  </con:settings>
+  <con:call id="c2825eec-6ad1-410a-9205-8efe0fa147ce" name="FinnsAktivAnsokan Request">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/FardskrivarkortYt1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:FinnsAktivAnsokan>
+         <!--Optional:-->
+         <_0:personnummer>?</_0:personnummer>
+      </_0:FinnsAktivAnsokan>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IFardskrivarkortYtService_FinnsAktivAnsokan"/>
+    <con:wsrmConfig version="1.2"/>
+    <con:environmentSpec>
+      <con:entry environmentId="a058e6c6-b56c-4e48-99de-eb3a828d2205">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:call>
+</con:operation>

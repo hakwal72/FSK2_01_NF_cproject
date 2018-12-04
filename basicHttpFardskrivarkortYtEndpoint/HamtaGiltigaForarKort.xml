@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="6da0cfd5-bbfb-48d3-b1fe-f4fe0cb0c765" isOneWay="false" action="urn:bas:fardskrivarkortyt:IFardskrivarkortYtService_HamtaGiltigaForarKort" name="HamtaGiltigaForarKort" bindingOperationName="HamtaGiltigaForarKort" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6da0cfd5-bbfb-48d3-b1fe-f4fe0cb0c765fileName">HamtaGiltigaForarKort</con:setting>
+  </con:settings>
+</con:operation>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6680176c-88c6-43b7-bc48-a1fb8a9e64dd" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF1_s4_Reg OCR" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6680176c-88c6-43b7-bc48-a1fb8a9e64ddfileName">AF1_s4_Reg-OCR</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="jdbc" name="TestStep_OCR langd 19 - JDBC Request" id="6bd984c7-0424-4621-b2aa-4f0b6127d9ed">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokan.*
+From Ansokan
+Where Ansokan.PersonId = :PID_1</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="23400fe5-c33a-48db-9195-b8c9a40a3949" name="Match content of [OCR] langd 19 using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/OCR[1]/text(), '^.{19}$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="839eee46-a5b2-4fac-83e2-0e0ab19deb8c">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>e247d951-5e39-4af9-9847-cdd26f9bea08</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>b58a47b0-3d82-433a-8009-bdd29211efce</con:tagId>
+</con:testCase>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="30767e1d-62a8-4d26-9bd5-d7a3f84e73a7" created="2.4.0" activeEnvironment="AnsFskYt-t" name="FSK2_01_NF_cproject" resourceRoot="" updated="2.5.0" encryptionMode="Not encrypted" savePropertyValues="false" compositeProjectFormat="1.3" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Endast Normalfall i detta projekt
+
+Forvillkor: Betalning sker alltid (se</con:description>
+  <con:settings>
+    <con:setting id="WsdlSettings@cache-wsdls">false</con:setting>
+    <con:setting id="ProjectSettings@shadowPassword"/>
+    <con:setting id="30767e1d-62a8-4d26-9bd5-d7a3f84e73a7fileName">FSK2_01_NF_cproject</con:setting>
+  </con:settings>
+  <con:vcsConfiguration>
+    <con:vcsName>Git</con:vcsName>
+    <con:repositoryIdentifier>https://github.com/hakwal72/FSK2_01_NF_cproject.git</con:repositoryIdentifier>
+  </con:vcsConfiguration>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements>
+    <con:requirement>
+      <con:id>SC01.1 Registrera_BPath (AF 216524) 1,2,3,5,6</con:id>
+      <con:name>Feature 216524</con:name>
+      <con:description>AF Registrera och diariefora ansokan</con:description>
+      <con:status>In Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+    <con:requirement>
+      <con:id>SC01.2 Kontrollera_BPath (AF 162718) 1,2,3,4,5,6,7</con:id>
+      <con:name>Feature 162718</con:name>
+      <con:description>AF Kontrollera ansokan och basvillkor</con:description>
+      <con:status>In Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases>
+        <con:entry>332fb658-7096-43ab-9af4-17ba34e017cf</con:entry>
+      </con:testCases>
+    </con:requirement>
+    <con:requirement>
+      <con:id>SC01.3 Utreda - BPath (AF 157455) 1,2,3,4,5</con:id>
+      <con:name>Feature 157455</con:name>
+      <con:description>AF Kontroll Tachonet</con:description>
+      <con:status>In Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+    <con:requirement>
+      <con:id>SC01.4 Skapa p-ulag_BPath (AF 154198) 1,2,3,4,5,6,7,8</con:id>
+      <con:name>Feature 154198</con:name>
+      <con:description>AF Skapa personaliseringsunderlag</con:description>
+      <con:status>In Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+    <con:requirement>
+      <con:id>SC01.5 Kontr Prod kort - BPath - (AF 154209) 1,2,3,4,5,6</con:id>
+      <con:name>Feature 154209</con:name>
+      <con:description>AF Kontrollera och registrera handelser  fran CP_BasicPath_Scenario1</con:description>
+      <con:status>In Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+    <con:requirement>
+      <con:id>SC01.6 Kontr utl kort - BPath  ( 154210 PO) 1,2,3,4,5</con:id>
+      <con:name>Feature 154210</con:name>
+      <con:description>AF Kontrollera och registrera handelser fran postombud__Basic Path_Scenario1</con:description>
+      <con:status>In Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+    <con:requirement>
+      <con:id>01.F00_Ansokan</con:id>
+      <con:name>Feature 152463</con:name>
+      <con:description>AF for E-tjanst Ansokan forarkort</con:description>
+      <con:status>Out of Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+    <con:requirement>
+      <con:id>sc01.2.2a AF 243300 Avvikelser ansokan" 1</con:id>
+      <con:name>2-3</con:name>
+      <con:description>Feature 243300</con:description>
+      <con:status>AF Avvikelser ansokan</con:status>
+      <con:details/>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+    <con:requirement>
+      <con:id>AF 248883 Avvikelser basvillkor</con:id>
+      <con:name>Feature 248883</con:name>
+      <con:description>AF Avvikelser basvillkor</con:description>
+      <con:status>Out of Scope</con:status>
+      <con:details>Longer text describing the requirement</con:details>
+      <con:links/>
+      <con:testCases/>
+    </con:requirement>
+  </con:requirements>
+  <con:properties/>
+  <con:afterLoadScript/>
+  <con:encryptedContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer>
+    <con:databaseConnection>
+      <con:name>AnsFsk-T MS SQL JDBC</con:name>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+    </con:databaseConnection>
+    <con:databaseConnection>
+      <con:name>AnsFsk-DT MS SQL JDBC</con:name>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-dt;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password/>
+      <con:connectionProperties/>
+    </con:databaseConnection>
+    <con:databaseConnection>
+      <con:name>Test-JDBC</con:name>
+      <con:driver xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:connectionString xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:password/>
+      <con:connectionProperties/>
+    </con:databaseConnection>
+  </con:databaseConnectionContainer>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:environment id="a058e6c6-b56c-4e48-99de-eb3a828d2205" name="AnsFskYt-t">
+    <con:service type="SOAP" name="basicHttpFardskrivarkortYtEndpoint">
+      <con:endpoint authProfile="Inherit From Parent" username="" password="" domain="" incomingWss="" outgoingWss="" wssTimeToLive="" wssType="">http://ansfskyt-t.ia.tsnet.se/wcf/FardskrivarkortYt1_0.svc</con:endpoint>
+    </con:service>
+    <con:service type="SOAP" name="basicHttpPersonaliseraEndpoint">
+      <con:endpoint authProfile="Inherit From Parent">http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer>
+      <con:databaseConnection>
+        <con:name>AnsFsk-T MS SQL JDBC</con:name>
+        <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+        <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+        <con:password>ElisiaZeng16806</con:password>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+      <con:databaseConnection>
+        <con:name>AnsFsk-DT MS SQL JDBC</con:name>
+        <con:driver xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:connectionString xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:password/>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+      <con:databaseConnection>
+        <con:name>Test-JDBC</con:name>
+        <con:driver xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:connectionString xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:password/>
+        <con:connectionProperties/>
+      </con:databaseConnection>
+    </con:databaseConnectionContainer>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:authRepository>
+    <con:ntlmAuthEntry>
+      <con:name>Tang</con:name>
+      <con:type>NTLM</con:type>
+      <con:username>peta02</con:username>
+      <con:password>ElisiaZeng16808</con:password>
+      <con:domain>tsnet</con:domain>
+    </con:ntlmAuthEntry>
+    <con:ntlmAuthEntry>
+      <con:name>Wallner</con:name>
+      <con:type>NTLM</con:type>
+      <con:username>hawa03</con:username>
+      <con:password>2019Winter</con:password>
+      <con:domain>tsnet</con:domain>
+    </con:ntlmAuthEntry>
+  </con:authRepository>
+  <con:environmentSpec>
+    <con:entry environmentId="a058e6c6-b56c-4e48-99de-eb3a828d2205">
+      <con:authProfile>Tang</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tags>
+    <con:tag>
+      <con:id>67df26bb-aca2-4fcf-90c1-9408baf19305</con:id>
+      <con:name>SC01 Funktion 2_Kontrollera_del av 162718 AF Kontrollera ansokan och basvillkor</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>63880d6f-9e06-437a-bf6d-8aa337c47c26</con:id>
+      <con:name>SC01 Funktion 3_Utreda_del av 157455 AF Kontroll Tachonet</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>5ce2f2c6-6428-471f-954b-d9efeae7b0a3</con:id>
+      <con:name>SC01 Funktion del av 154198 AF</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>dfe87134-5a08-4ebf-9768-4f6fc5181af5</con:id>
+      <con:name>SC01 Funktion 5_Kontr Prod kort_del av 154209 AF Kontrollera och registrera handelser  fran CP</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>1712b932-7dd8-4ec3-85f2-a5853353c4a9</con:id>
+      <con:name>SC01 Funktion 6_del av 154210 AF Kontrollera och registrera handelser fran postombud</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:id>
+      <con:name>TC Auto</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>0cfbfff5-d16b-4c41-bd9d-a61275d70ceb</con:id>
+      <con:name>TC Manuell</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>758bbad8-b226-453a-8142-177a59281e32</con:id>
+      <con:name>F1 Aktivitet 1 Skapa arende och diariefora ansokan_SC01 Funktion 1_1 Registrera_del av 216524 AF</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>76759334-92e9-4814-9046-6118125f1876</con:id>
+      <con:name>F1 Aktivitet 2 Hamta uppgifter och registrera ansokan i VTR_SC01 Funktion 1_2 Registrera_del av 216524 AF</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>d40f01d3-32f0-4f9f-8701-4fc56829c9f4</con:id>
+      <con:name>F1 Aktivitet 3 Kontroll ansokan e tjanst_SC01 Funktion 1_3 Registrera_del av 216524 AF</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>b58a47b0-3d82-433a-8009-bdd29211efce</con:id>
+      <con:name>F1 Aktivitet 4 Skapa debitering och satta bevakningsdatum_SC01 Funktion 1_4 Registrera_del av 216524 AF</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>68605927-43e3-4610-921e-30c4ba1b369a</con:id>
+      <con:name>F1 Aktivitet 5 Skapa och skicka bekraftelsemail_SC01 Funktion 1_5 Registrera_del av 216524 AF</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>53c35688-3e56-4eb3-b0d9-2c7c36ea04c9</con:id>
+      <con:name>F1 Aktivitet 0 Ansokan ar inkommen fran e tjanst_SC01 Funktion 1_0 Registrera_del av 216524 AF</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>d0f27511-7f5d-4dfb-b2e0-53934f5bb5a4</con:id>
+      <con:name>F2 Aktivitet 0 Startvillkor_SC01 F1_0  AF_162718 Kontrollera ansokan och basvillkor</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>4fdfee02-6c44-4f43-88e7-34c689e8f24d</con:id>
+      <con:name>F2 Aktivitet 1 Kontroll om betalning ar registrerad for arendet_SC01 F2_1 AF162718</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>d4a3c86b-a2df-4362-9888-9372d4ca1d5f</con:id>
+      <con:name>F2 Aktivitet 3 Kontrollera om sokande ska ERS eller inte_SC01 F2_3 AF162718</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>cf6df0ba-f45b-4e23-94a4-246caca7ce39</con:id>
+      <con:name>F2 Aktivitet 2 Kontroll av ansokan_SC01 F2_2 AF162718</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>cae37254-d3be-4ed3-ae3c-0b097606edb7</con:id>
+      <con:name>F2 Aktivitet 4 Kontroll av behorigheter for den sokande_SC01 F2_4 AF162718</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>f898843f-ba0a-4975-8e10-83e8a7c5f70d</con:id>
+      <con:name>F2 Aktivitet 5 Kontroller att nodvandiga handlingar finns_SC01 F2_5 AF162718</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>928839d9-0fdd-434e-a050-658f1cf47f69</con:id>
+      <con:name>F2 Aktivitet 6 Spara ner kontrollerade uppgifter och avvikelser_SC01 F2_6 AF162718</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>61b2af8f-8c93-48e4-b643-74eafda89620</con:id>
+      <con:name>F3 Aktivitet 1 Kontroll av vilken fardskrivarkortstyp som ansokan avser_SC01 F3_1  AF157455</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>c89f6aa7-0806-47ed-8066-9e5c02bf2e71</con:id>
+      <con:name>F3 Aktivitet 2 Urval for att skicka CIC begaran gallande ansokan forarkort_SC01 F3_2  AF157455</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>07a3a20e-2aaf-48cb-bc68-856cb679c278</con:id>
+      <con:name>F3 Aktivitet 3 Ansokan godkanns_SC01 F3_3  AF157455</con:name>
+    </con:tag>
+    <con:tag>
+      <con:id>f133230a-e29a-45fa-a711-99246a145d5c</con:id>
+      <con:name>F3 Aktivitet 4 Kontroll om ansokan avser utbyte_SC01 F3_4  AF157455</con:name>
+    </con:tag>
+  </con:tags>
+</con:soapui-project>

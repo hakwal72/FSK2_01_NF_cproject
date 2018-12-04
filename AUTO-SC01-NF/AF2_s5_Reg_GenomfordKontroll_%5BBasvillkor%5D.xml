@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="426154bb-e8f3-4fcd-9bc5-30d3600fa078" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF2_s5_Reg_GenomfordKontroll_[Basvillkor]" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="426154bb-e8f3-4fcd-9bc5-30d3600fa078fileName">AF2_s5_Reg_GenomfordKontroll_%5BBasvillkor%5D</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_Folkbokford - JDBC Request" id="86dd592b-08ea-4326-9a02-abec98a4a8c9">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select GenomfordKontroll.*, Ansokan.PersonId
+From GenomfordKontroll Inner Join
+  Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
+  And GenomfordKontroll.KontrolltypId = 'Folkbokford'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="JDBC Status" id="84985e58-52a1-4a71-af1e-4daf65ef6bf4" name="JDBC Status"/>
+      <con:assertion type="XPath Match" id="7fba16af-539c-4955-bee3-7ec766fbace5" name="Match content of [KontrolltypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KontrolltypId[1]/text()</path>
+          <content>Folkbokford</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="19eb6bac-c68a-4a7d-8a8f-ba530558e252" name="Match content of [ManuellHandlaggningKravs]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ManuellHandlaggningKravs[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="dbcafbe9-0057-4fe6-8ee8-088c404de4a8">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_NamnKorkort - JDBC Request" id="3338cb18-6fb4-4873-85e1-b718d9c8a775">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select GenomfordKontroll.*, Ansokan.PersonId
+From GenomfordKontroll Inner Join
+  Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
+  And GenomfordKontroll.KontrolltypId = 'NamnKorkort'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="JDBC Status" id="84985e58-52a1-4a71-af1e-4daf65ef6bf4" name="JDBC Status"/>
+      <con:assertion type="XPath Match" id="f96f9acc-03de-4528-9ed0-00f2f92b38ce" name="Match content of [KontrolltypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KontrolltypId[1]/text()</path>
+          <content>NamnKorkort</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="c96a5fb5-da6b-44d5-9670-9deaea834262" name="Match content of [ManuellHandlaggningKravs]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ManuellHandlaggningKravs[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 2" id="5da2edb9-ac9d-4ea8-82ec-69993934355d">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_FotoOchSignatur - JDBC Request" id="c957eec0-d92c-4dba-b756-12c96c857945">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select GenomfordKontroll.*, Ansokan.PersonId
+From GenomfordKontroll Inner Join
+  Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
+  And GenomfordKontroll.KontrolltypId = 'FotoOchSignatur'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="JDBC Status" id="84985e58-52a1-4a71-af1e-4daf65ef6bf4" name="JDBC Status"/>
+      <con:assertion type="XPath Match" id="8e01b075-0730-4962-bd18-7fad749a9337" name="Match content of [KontrolltypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KontrolltypId[1]/text()</path>
+          <content>FotoOchSignatur</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="ed8fe82b-ad18-4d28-bd12-db3780ab9054" name="Match content of [ManuellHandlaggningKravs]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ManuellHandlaggningKravs[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 3" id="28efb777-9cf9-4543-b349-8641f86f5527">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>50ea1e58-973d-4a9b-9ae8-c56c606f4ce5</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>753cb717-4a8e-4c3b-8797-6cc0fb128010</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>dbcafbe9-0057-4fe6-8ee8-088c404de4a8</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>5da2edb9-ac9d-4ea8-82ec-69993934355d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>28efb777-9cf9-4543-b349-8641f86f5527</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>67df26bb-aca2-4fcf-90c1-9408baf19305</con:tagId>
+</con:testCase>

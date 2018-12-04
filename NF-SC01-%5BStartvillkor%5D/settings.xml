@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="efa22286-01f2-4132-b50c-fcb7848ab994" name="NF SC01 [Startvillkor]" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="efa22286-01f2-4132-b50c-fcb7848ab994fileName">NF-SC01-%5BStartvillkor%5D</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>53c35688-3e56-4eb3-b0d9-2c7c36ea04c9</con:tagId>
+</con:testSuite>

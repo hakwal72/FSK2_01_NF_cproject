@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="5b3d1248-756c-4667-b793-4122e8343288" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase A_F1_Forvillkor NF" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5b3d1248-756c-4667-b793-4122e8343288fileName">TestCase-A_F1_Forvillkor-NF</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="manualTestStep" name="DB Settings TACHOnetUrvalProcentsats" id="12168430-c88f-464d-b1ee-6a3d76d8ad41">
+    <con:description>Kontroller TACHOnetUrvalProcentsats  i dbo.Setting</con:description>
+    <con:settings/>
+    <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:expectedResult>TACHOnetUrvalProcentsats = 0</con:expectedResult>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="manualTestStep" name="Wcf Web.config_Forbered NF" id="d1dc9184-95ad-4b8a-b0db-c86dd8a20a14">
+    <con:description>AnsFskYt-t.ia.tsnet.se          Webapps\wcf</con:description>
+    <con:settings/>
+    <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:expectedResult><![CDATA[<appSettings>
+    <add key="ServiceControlQueueName" value="Particular.ServiceControl.FSKYT-T"/>
+    <add key="EnableHeartbeatPlugin" value="true"/>
+    <add key="EnableSagaAuditPlugin" value="false"/>
+    <add key="EnableNServiceBusInstallers" value="true"/>
+    <add key="IVTR_DriftKontoNummer" value="6993000113"/>
+    <add key="IVTR_URL" value="http://ivtr-kt.ia.tsnet.se/intweb/wcfservice.svc"/>
+    <add key="Environment" value="T"/>
+    <add key="AhKonto" value="svcYtAh-T"/>
+    <add key="EpostadressFelmeddelande" value="peter.tang@transportstyrelsen.se"/>
+    <add key="EnableKvittensfilTask" value="true"/>
+    <add key="KvittensfilFilepath" value="\\ts-netapp2\Sysfiler-T\Yrkestrafik\FSK\Postombudkvittens\T"/>
+    <add key="KvittensfilTaskIntervalInSeconds" value="900"/>
+    <add key="EnableBetalfilTask" value="false"/>
+    <add key="BetalfilDirectory" value="\\ts-netapp2\Sysfiler-t\yrkestrafik\FSK\ATKF"/>
+    <add key="BetalfilTaskIntervalInSeconds" value="3600"/>
+    <add key="SkipBetalningForAnsokan" value="true"/>
+  </appSettings>]]></con:expectedResult>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="manualTestStep" name="Manual Delete SQL 7 tabeller" id="2199635e-9aed-40cd-95f8-9543fb50f2e9" disabled="true">
+    <con:description>begin transaction
+
+declare @personId int = 10445994
+
+    delete FROM [AnsFskYt-t].[dbo].[Korthandelse]
+  where id in
+  (
+   select KH.id 
+      from [AnsFskYt-t].[dbo].[Korthandelse] KH
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KH.KortId=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+  delete from [AnsFskYt-t].[dbo].[KortIntressent]
+  where id in
+  (
+   select KI.id 
+      from [AnsFskYt-t].[dbo].[KortIntressent] KI
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KI.Id=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete from [AnsFskYt-t].[dbo].[Kort]
+  where id in
+  (
+   select K.id 
+      from  [AnsFskYt-t].[dbo].[Kort] K 
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete FROM [AnsFskYt-t].[dbo].[Beslut]
+  where id in
+  (
+   select B.id 
+      from [AnsFskYt-t].[dbo].[Beslut] B
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = B.Id)
+	  where A.PersonId=@personId
+  )
+  
+      delete FROM [AnsFskYt-t].[dbo].[GenomfordKontroll]
+  where id in
+  (
+   select GK.id 
+      from [AnsFskYt-t].[dbo].[GenomfordKontroll] GK
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = GK.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokanhandelse]
+  where id in
+  (
+   select AH.id 
+      from [AnsFskYt-t].[dbo].[Ansokanhandelse] AH
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = AH.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokan]
+  where id in
+  (
+   select A.id 
+      from [AnsFskYt-t].[dbo].[Ansokan] A
+	  where A.PersonId=@personId
+  )
+
+  rollback</con:description>
+    <con:settings/>
+    <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  </con:testStep>
+  <con:testStep type="jdbc" name="Rensa SQL PID_1" id="c5207b2b-19a7-4f37-8edb-0b326a1a1ac8">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>begin transaction
+
+declare @personId int = :PID_1
+
+    delete FROM [AnsFskYt-t].[dbo].[Korthandelse]
+  where id in
+  (
+   select KH.id 
+      from [AnsFskYt-t].[dbo].[Korthandelse] KH
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KH.KortId=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+  delete from [AnsFskYt-t].[dbo].[KortIntressent]
+  where id in
+  (
+   select KI.id 
+      from [AnsFskYt-t].[dbo].[KortIntressent] KI
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KI.Id=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete from [AnsFskYt-t].[dbo].[Kort]
+  where id in
+  (
+   select K.id 
+      from  [AnsFskYt-t].[dbo].[Kort] K 
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete FROM [AnsFskYt-t].[dbo].[Beslut]
+  where id in
+  (
+   select B.id 
+      from [AnsFskYt-t].[dbo].[Beslut] B
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = B.Id)
+	  where A.PersonId=@personId
+  )
+  
+      delete FROM [AnsFskYt-t].[dbo].[GenomfordKontroll]
+  where id in
+  (
+   select GK.id 
+      from [AnsFskYt-t].[dbo].[GenomfordKontroll] GK
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = GK.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokanhandelse]
+  where id in
+  (
+   select AH.id 
+      from [AnsFskYt-t].[dbo].[Ansokanhandelse] AH
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = AH.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokan]
+  where id in
+  (
+   select A.id 
+      from [AnsFskYt-t].[dbo].[Ansokan] A
+	  where A.PersonId=@personId
+  )
+
+  commit</con:query>
+      <con:assertion type="XPath Match" id="eb2c6db3-7732-4313-86d4-6db893c52208" name="Match content of [UpdateCount]">
+        <con:configuration>
+          <path>//Results[1]/UpdateCount[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>10445994</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>d1dc9184-95ad-4b8a-b0db-c86dd8a20a14</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>2199635e-9aed-40cd-95f8-9543fb50f2e9</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>53c35688-3e56-4eb3-b0d9-2c7c36ea04c9</con:tagId>
+</con:testCase>

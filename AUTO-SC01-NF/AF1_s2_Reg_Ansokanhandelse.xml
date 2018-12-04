@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="e3f1a333-a83b-4a58-9bb3-8795426ae68a" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF1_s2_Reg_Ansokanhandelse" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e3f1a333-a83b-4a58-9bb3-8795426ae68afileName">AF1_s2_Reg_Ansokanhandelse</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="jdbc" name="TestStep_Ansokan registrerad - JDBC Request" id="6ec572c2-52d7-4970-bcf7-899ab4973428">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokanhandelse.*, Ansokan.PersonId
+From Ansokanhandelse Inner Join
+  Ansokan On Ansokan.Id = Ansokanhandelse.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
+  'AnsokanRegistrerad'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="5fadd8ca-79c8-4549-acf3-6648afc0eff7" name="Match content of [AnsokanhandelsetypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/AnsokanhandelsetypId[1]/text()</path>
+          <content>AnsokanRegistrerad</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="fbfee36b-9d1c-40f3-88b0-74b84fd1b152">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Avi utskickad - JDBC Request" id="085fa7fb-4a71-4674-b3d3-56952b4bed6e">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokanhandelse.*, Ansokan.PersonId
+From Ansokanhandelse Inner Join
+  Ansokan On Ansokan.Id = Ansokanhandelse.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
+  'AviUtskickad'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="JDBC Status" id="84985e58-52a1-4a71-af1e-4daf65ef6bf4" name="JDBC Status"/>
+      <con:assertion type="XPath Match" name="Match content of [ANSOKANHANDELSETYPID] Avi utskickad" id="5713b66f-543b-4dcf-805d-6710d57f2df8">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ANSOKANHANDELSETYPID[1]/text()</path>
+          <content>AviUtskickad</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 2" id="2f4208ba-3098-4030-9ed7-becda1007a7f">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Mejl utskickat - JDBC Request" id="58ca185b-0eae-4517-88dd-70e22c9676d3">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokanhandelse.*, Ansokan.PersonId
+From Ansokanhandelse Inner Join
+  Ansokan On Ansokan.Id = Ansokanhandelse.AnsokanId
+Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
+  'MejlUtskickat'</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" name="Match content of [ANSOKANHANDELSETYPID=20] Mejl utskickad" id="a0755135-ff56-4e64-ab9e-e366a91187a6">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ANSOKANHANDELSETYPID[1]/text()</path>
+          <content>MejlUtskickat</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>PID_1</con:name>
+          <con:value>${#Global#PID_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>50ea1e58-973d-4a9b-9ae8-c56c606f4ce5</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>753cb717-4a8e-4c3b-8797-6cc0fb128010</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>fbfee36b-9d1c-40f3-88b0-74b84fd1b152</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>76759334-92e9-4814-9046-6118125f1876</con:tagId>
+</con:testCase>

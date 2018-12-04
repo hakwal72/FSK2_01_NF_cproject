@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="eb9eeb0e-4e11-4a8f-8d74-cd8baac38f30" isOneWay="false" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_KortPersonaliserat" name="KortPersonaliserat" bindingOperationName="KortPersonaliserat" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="eb9eeb0e-4e11-4a8f-8d74-cd8baac38f30fileName">KortPersonaliserat</con:setting>
+  </con:settings>
+  <con:call id="362277d9-c134-4ce1-a59d-0200bb633f17" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:KortPersonaliserat>
+         <!--Optional:-->
+         <_0:kortnummerMedIndex>?</_0:kortnummerMedIndex>
+         <!--Optional:-->
+         <_0:utfardandedatum>?</_0:utfardandedatum>
+         <!--Optional:-->
+         <_0:forstaGiltighetsdag>?</_0:forstaGiltighetsdag>
+         <!--Optional:-->
+         <_0:sistaGiltighetsdag>?</_0:sistaGiltighetsdag>
+      </_0:KortPersonaliserat>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_KortPersonaliserat"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

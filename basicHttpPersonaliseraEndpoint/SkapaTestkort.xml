@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="47be0766-425e-4a06-a441-b7345ac4e5e0" isOneWay="false" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_SkapaTestkort" name="SkapaTestkort" bindingOperationName="SkapaTestkort" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="47be0766-425e-4a06-a441-b7345ac4e5e0fileName">SkapaTestkort</con:setting>
+  </con:settings>
+  <con:call id="7d7fcffb-a28f-414e-bdfb-0015effa0745" name="Request 1">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <_0:SkapaTestkort>
+         <!--Optional:-->
+         <_0:personnummer>?</_0:personnummer>
+         <!--Optional:-->
+         <_0:kortnummer>?</_0:kortnummer>
+         <!--Optional:-->
+         <_0:arendenummer>?</_0:arendenummer>
+         <!--Optional:-->
+         <_0:utfardandeOrsak>?</_0:utfardandeOrsak>
+         <!--Optional:-->
+         <_0:utfardandeMyndighet>?</_0:utfardandeMyndighet>
+         <!--Optional:-->
+         <_0:utfardandeMedlemsstat>?</_0:utfardandeMedlemsstat>
+         <!--Optional:-->
+         <_0:forstaGiltighetsdag>?</_0:forstaGiltighetsdag>
+         <!--Optional:-->
+         <_0:sistaGiltighetsdag>?</_0:sistaGiltighetsdag>
+         <!--Optional:-->
+         <_0:reknummer>?</_0:reknummer>
+         <!--Optional:-->
+         <_0:kortstatus>?</_0:kortstatus>
+         <!--Optional:-->
+         <_0:kortstatusAndrad>?</_0:kortstatusAndrad>
+         <!--Optional:-->
+         <_0:korttyp>?</_0:korttyp>
+         <!--Optional:-->
+         <_0:fardskrivartillampning>?</_0:fardskrivartillampning>
+         <!--Optional:-->
+         <_0:fornamnVidTillverkning>?</_0:fornamnVidTillverkning>
+         <!--Optional:-->
+         <_0:efternamnVidTillverkning>?</_0:efternamnVidTillverkning>
+      </_0:SkapaTestkort>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_SkapaTestkort"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

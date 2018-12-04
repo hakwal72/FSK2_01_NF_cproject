@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6d608b0a-cb78-4d69-a101-bfed42b238e7" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase A.F1_Ansokan ar inkommen e-tjanst" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description/>
+  <con:settings>
+    <con:setting id="6d608b0a-cb78-4d69-a101-bfed42b238e7fileName">TestCase-A.F1_Ansokan-ar-inkommen-e-tjanst</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="SC01 1.1 DataSource-RegistreraAnsokan TestStep" id="50e09cd8-add1-4f23-b30e-9249505ed301">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Grid">
+        <con:configuration>
+          <check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry></xml-fragment>]]></check>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190703079814</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000000</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">hakan.wallner@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190703239814</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000001</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190703069823</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000002</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190701319808</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000003</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702019811</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000004</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702279811</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000005</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702289802</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000006</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190703019810</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000007</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702029802</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000008</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702249806</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000009</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702259813</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000010</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702269804</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000011</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702189804</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000012</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702199811</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000013</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702209826</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000014</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702159815</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000015</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702169806</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000016</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702219817</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000017</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702229808</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000018</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702239815</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000019</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702099813</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000020</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702109828</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000021</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702119819</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000022</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">190702129800</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forarkort</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config">0760000023</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">peter.tang@transportstyrelsen.se</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Forstagangsansokan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <recognizeAsPlainText>true</recognizeAsPlainText>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Personnummer</con:property>
+      <con:property>AntalKort</con:property>
+      <con:property>Korttyp</con:property>
+      <con:property>UtfardandeLandForarkort</con:property>
+      <con:property>UtlandsktForarkortsnummer</con:property>
+      <con:property>Telefonnummer</con:property>
+      <con:property>Epost</con:property>
+      <con:property>UtfardandeOrsak</con:property>
+      <con:property>EjErsattningskort</con:property>
+      <con:property>Fardskrivarkortsnummer</con:property>
+      <con:property>OcrNummer</con:property>
+      <con:startRow>0</con:startRow>
+      <con:endRow>23</con:endRow>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>false</con:completeLastOperation>
+      <con:failOnEmpty>true</con:failOnEmpty>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" id="9c695eca-318a-4595-8408-23aacb7fb9d9" name="SC01 1.2 RegistreraAnsokan Request SOAP">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>basicHttpFardskrivarkortYtEndpoint</con:interface>
+      <con:operation>RegistreraAnsokan</con:operation>
+      <con:request name="SC01 1.2 RegistreraAnsokan Request SOAP" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="0f944028-dd60-4fa9-bdcb-f3272b820c8a">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">Mandatory and Data</con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/FardskrivarkortYt1_0.svc</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <_0:RegistreraAnsokan>\r
+         <!--Optional:-->\r
+         <_0:ansokanDto>\r
+            <_0:Personnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Personnummer}</_0:Personnummer>\r
+            <_0:UtfardandeLandForarkort>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#UtfardandeLandForarkort}</_0:UtfardandeLandForarkort>\r
+            <!--Optional:-->\r
+            <_0:UtlandsktForarkortsnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#UtlandsktForarkortsnummer}</_0:UtlandsktForarkortsnummer>\r
+            <_0:Telefonnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Telefonnummer}</_0:Telefonnummer>\r
+            <_0:Epost>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Epost}</_0:Epost>\r
+            <_0:UtfardandeOrsak>Forstagangsansokan</_0:UtfardandeOrsak>\r
+            <_0:EjErsattningskort>false</_0:EjErsattningskort>\r
+            <!--Optional:-->\r
+            <_0:Fardskrivarkortsnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Fardskrivarkortsnummer}</_0:Fardskrivarkortsnummer>\r
+            <_0:PrisPerKort>100</_0:PrisPerKort>\r
+         </_0:ansokanDto>\r
+      </_0:RegistreraAnsokan>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="d62f1767-6b13-4ce9-9ede-beef9e17fa88" name="SOAP Response"/>
+        <con:credentials>
+          <con:username>hawa03</con:username>
+          <con:password>2018Summer</con:password>
+          <con:domain>tsnet</con:domain>
+          <con:selectedAuthProfile>NTLM</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>NTLM</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IFardskrivarkortYtService_RegistreraAnsokan"/>
+        <con:wsrmConfig version="1.2"/>
+        <con:environmentSpec>
+          <con:entry environmentId="a058e6c6-b56c-4e48-99de-eb3a828d2205">
+            <con:authProfile>Tang</con:authProfile>
+            <con:username>peta02</con:username>
+            <con:password>ElisiaZeng16807</con:password>
+            <con:domain>tsnet</con:domain>
+          </con:entry>
+        </con:environmentSpec>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 1" id="767f7712-235f-420e-8dae-b9219c40ebf0">
+    <con:settings/>
+    <con:config>
+      <delay>90000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="SC01 1.3 DataSource Loop" id="6c88109e-1fb8-4cda-b876-1d295320c9c9" disabled="true">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>SC01 1.1 DataSource-RegistreraAnsokan TestStep</dataSourceStep>
+      <targetStep>SC01 1.2 RegistreraAnsokan Request TestStep</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 2" id="cb59cd58-e4a8-46b4-889e-f93cd3c2b41f" disabled="true">
+    <con:settings/>
+    <con:config>
+      <delay>10000</delay>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>9c286002-7d70-449c-8af9-767458b2de7a</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>eb5992fb-0b5c-4952-9ab5-2b5071698380</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>cfe3d526-4ed6-4fbd-8df7-927770a4d547</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>e48e97a5-cbb1-47fd-a4ab-f273ff436085</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>3dfb3eb0-7404-46c7-bd40-f947f6689a51</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>b8ec22f4-5663-4a70-b48c-696fad48a811</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>df6013fb-f70d-4110-9662-a99745035859</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>53c35688-3e56-4eb3-b0d9-2c7c36ea04c9</con:tagId>
+</con:testCase>
