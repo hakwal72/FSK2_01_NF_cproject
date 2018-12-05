@@ -30,9 +30,7 @@ Betalning sker alltid (se TestCase_A_Forvillkor NF)</con:description>
       <con:status>In Scope</con:status>
       <con:details>Longer text describing the requirement</con:details>
       <con:links/>
-      <con:testCases>
-        <con:entry>332fb658-7096-43ab-9af4-17ba34e017cf</con:entry>
-      </con:testCases>
+      <con:testCases></con:testCases>
     </con:requirement>
     <con:requirement>
       <con:id>SC01.3 Utreda - BPath (AF 157455) 1,2,3,4,5</con:id>

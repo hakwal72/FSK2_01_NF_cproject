@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6785c507-4398-4862-8ade-610948f4c88b" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5_HamtaKortnummerMedIndex" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="6785c507-4398-4862-8ade-610948f4c88b" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5_HamtaKortnummerMedIndex" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="6785c507-4398-4862-8ade-610948f4c88bfileName">AF5_HamtaKortnummerMedIndex</con:setting>
   </con:settings>
@@ -51,7 +51,7 @@ Where Kort.PersonId = ${#Global#PID_1}</query>
       <con:properties>
         <con:property>
           <con:name>KortnummerMedIndex</con:name>
-          <con:value xsi:nil="true"/>
+          <con:value>0000073544040000</con:value>
         </con:property>
       </con:properties>
     </con:config>

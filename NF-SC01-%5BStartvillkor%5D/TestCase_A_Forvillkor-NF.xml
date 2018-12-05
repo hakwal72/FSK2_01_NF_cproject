@@ -15,24 +15,10 @@
     <con:description>AnsFskYt-t.ia.tsnet.se          Webapps\wcf</con:description>
     <con:settings/>
     <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:expectedResult><![CDATA[<appSettings>
-    <add key="ServiceControlQueueName" value="Particular.ServiceControl.FSKYT-T"/>
-    <add key="EnableHeartbeatPlugin" value="true"/>
-    <add key="EnableSagaAuditPlugin" value="false"/>
-    <add key="EnableNServiceBusInstallers" value="true"/>
-    <add key="IVTR_DriftKontoNummer" value="6993000113"/>
-    <add key="IVTR_URL" value="http://ivtr-kt.ia.tsnet.se/intweb/wcfservice.svc"/>
-    <add key="Environment" value="T"/>
-    <add key="AhKonto" value="svcYtAh-T"/>
-    <add key="EpostadressFelmeddelande" value="peter.tang@transportstyrelsen.se"/>
-    <add key="EnableKvittensfilTask" value="true"/>
-    <add key="KvittensfilFilepath" value="\\ts-netapp2\Sysfiler-T\Yrkestrafik\FSK\Postombudkvittens\T"/>
-    <add key="KvittensfilTaskIntervalInSeconds" value="900"/>
-    <add key="EnableBetalfilTask" value="false"/>
-    <add key="BetalfilDirectory" value="\\ts-netapp2\Sysfiler-t\yrkestrafik\FSK\ATKF"/>
-    <add key="BetalfilTaskIntervalInSeconds" value="3600"/>
-    <add key="SkipBetalningForAnsokan" value="true"/>
-  </appSettings>]]></con:expectedResult>
+      <con:expectedResult>&lt;appSettings>
+   
+    &lt;add key="SkipBetalningForAnsokan" value="true"/>
+  &lt;/appSettings></con:expectedResult>
     </con:config>
   </con:testStep>
   <con:testStep type="manualTestStep" name="Manual Delete SQL 7 tabeller" id="2199635e-9aed-40cd-95f8-9543fb50f2e9" disabled="true">

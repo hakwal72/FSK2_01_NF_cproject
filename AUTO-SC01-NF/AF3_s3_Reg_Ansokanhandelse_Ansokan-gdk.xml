@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="388fe93b-c795-4f72-b41f-66ed2eeb5f9a" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF3_s3_Reg_Ansokanhandelse_Ansokan gdk" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="388fe93b-c795-4f72-b41f-66ed2eeb5f9a" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF3_s3_Reg_Ansokanhandelse_Ansokan gdk" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="388fe93b-c795-4f72-b41f-66ed2eeb5f9afileName">AF3_s3_Reg_Ansokanhandelse_Ansokan-gdk</con:setting>
   </con:settings>

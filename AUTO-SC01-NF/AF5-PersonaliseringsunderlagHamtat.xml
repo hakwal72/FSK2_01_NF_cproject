@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="7ef40bdb-a0df-42a9-be4c-b2d9a2d83d1d" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5 PersonaliseringsunderlagHamtat" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="7ef40bdb-a0df-42a9-be4c-b2d9a2d83d1d" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5 PersonaliseringsunderlagHamtat" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="7ef40bdb-a0df-42a9-be4c-b2d9a2d83d1dfileName">AF5-PersonaliseringsunderlagHamtat</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="request" id="4c76d6f5-6ca7-49c5-968d-e9842dd73fd3" name="KvitteraPersonaliseringsunderlag - Request 1">
+  <con:testStep type="request" id="4c76d6f5-6ca7-49c5-968d-e9842dd73fd3" name="PersonaliseringsunderlagHamtat - Request 1">
     <con:settings/>
     <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:interface>basicHttpPersonaliseraEndpoint</con:interface>
       <con:operation>PersonaliseringsunderlagHamtat</con:operation>
-      <con:request name="KvitteraPersonaliseringsunderlag - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5746f31b-1f8e-4259-8a11-3aaf01eeca67">
+      <con:request name="PersonaliseringsunderlagHamtat - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5746f31b-1f8e-4259-8a11-3aaf01eeca67">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
