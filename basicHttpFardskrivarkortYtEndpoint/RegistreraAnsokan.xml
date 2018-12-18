@@ -16,16 +16,11 @@
          <!--Optional:-->
          <_0:ansokanDto>
             <_0:Personnummer>?</_0:Personnummer>
-            <_0:UtfardandeLandForarkort>?</_0:UtfardandeLandForarkort>
-            <!--Optional:-->
-            <_0:UtlandsktForarkortsnummer>?</_0:UtlandsktForarkortsnummer>
             <_0:Telefonnummer>?</_0:Telefonnummer>
             <_0:Epost>?</_0:Epost>
             <_0:UtfardandeOrsak>?</_0:UtfardandeOrsak>
-            <_0:EjErsattningskort>?</_0:EjErsattningskort>
-            <!--Optional:-->
-            <_0:Fardskrivarkortsnummer>?</_0:Fardskrivarkortsnummer>
             <_0:PrisPerKort>100</_0:PrisPerKort>
+            <_0:EjErsattningskort>?</_0:EjErsattningskort>
          </_0:ansokanDto>
       </_0:RegistreraAnsokan>
    </soapenv:Body>

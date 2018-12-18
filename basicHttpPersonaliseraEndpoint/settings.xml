@@ -13,15 +13,6 @@
     <wsdl:port name="basicHttpPersonaliseraEndpoint" binding="i0:basicHttpPersonaliseraEndpoint">
       <soap:address location="http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc"/>
     </wsdl:port>
-    <wsdl:port name="netTcpPersonaliseraEndpoint" binding="i0:netTcpPersonaliseraEndpoint">
-      <soap12:address location="net.tcp://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc"/>
-      <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Dns>localhost</Dns>
-        </Identity>
-      </wsa10:EndpointReference>
-    </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>]]></con:content>
       <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
@@ -33,35 +24,6 @@
     <wsp:ExactlyOne>
       <wsp:All>
         <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http"/>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="netTcpPersonaliseraEndpoint_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1"/>
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256/>
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict/>
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
-        <wsaw:UsingAddressing/>
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
@@ -131,73 +93,6 @@
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="netTcpPersonaliseraEndpoint" type="i0:PersonaliseraService">
-    <wsp:PolicyReference URI="#netTcpPersonaliseraEndpoint_policy"/>
-    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp"/>
-    <wsdl:operation name="HamtaAllaPersonaliseringsunderlag">
-      <soap12:operation soapAction="urn:bas:fardskrivarkortyt:IPersonaliseraService_HamtaAllaPersonaliseringsunderlag" style="document"/>
-      <wsdl:input>
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PersonaliseringsunderlagHamtat">
-      <soap12:operation soapAction="urn:bas:fardskrivarkortyt:IPersonaliseraService_PersonaliseringsunderlagHamtat" style="document"/>
-      <wsdl:input>
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="KortPersonaliserat">
-      <soap12:operation soapAction="urn:bas:fardskrivarkortyt:IPersonaliseraService_KortPersonaliserat" style="document"/>
-      <wsdl:input>
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="KortAvsant">
-      <soap12:operation soapAction="urn:bas:fardskrivarkortyt:IPersonaliseraService_KortAvsant" style="document"/>
-      <wsdl:input>
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PinDistribuerad">
-      <soap12:operation soapAction="urn:bas:fardskrivarkortyt:IPersonaliseraService_PinDistribuerad" style="document"/>
-      <wsdl:input>
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="FelaktigtUnderlag">
-      <soap12:operation soapAction="urn:bas:fardskrivarkortyt:IPersonaliseraService_FelaktigtUnderlag" style="document"/>
-      <wsdl:input>
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SkapaTestkort">
-      <soap12:operation soapAction="urn:bas:fardskrivarkortyt:IPersonaliseraService_SkapaTestkort" style="document"/>
-      <wsdl:input>
-        <soap12:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>

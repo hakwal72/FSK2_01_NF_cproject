@@ -81,16 +81,11 @@
          <!--Optional:-->
          <_0:ansokanDto>
             <_0:Personnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Personnummer}</_0:Personnummer>
-            <_0:UtfardandeLandForarkort>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#UtfardandeLandForarkort}</_0:UtfardandeLandForarkort>
-            <!--Optional:-->
-            <_0:UtlandsktForarkortsnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#UtlandsktForarkortsnummer}</_0:UtlandsktForarkortsnummer>
             <_0:Telefonnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Telefonnummer}</_0:Telefonnummer>
             <_0:Epost>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Epost}</_0:Epost>
             <_0:UtfardandeOrsak>Forstagangsansokan</_0:UtfardandeOrsak>
-            <_0:EjErsattningskort>false</_0:EjErsattningskort>
-            <!--Optional:-->
-            <_0:Fardskrivarkortsnummer>${SC01 1.1 DataSource-RegistreraAnsokan TestStep#Fardskrivarkortsnummer}</_0:Fardskrivarkortsnummer>
             <_0:PrisPerKort>100</_0:PrisPerKort>
+            <_0:EjErsattningskort>false</_0:EjErsattningskort>
          </_0:ansokanDto>
       </_0:RegistreraAnsokan>
    </soapenv:Body>
