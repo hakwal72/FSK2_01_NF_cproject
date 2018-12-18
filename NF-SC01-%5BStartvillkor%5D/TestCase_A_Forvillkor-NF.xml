@@ -4,7 +4,7 @@
     <con:setting id="5b3d1248-756c-4667-b793-4122e8343288fileName">TestCase_A_Forvillkor-NF</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="manualTestStep" name="DB Settings TACHOnetUrvalProcentsats" id="12168430-c88f-464d-b1ee-6a3d76d8ad41">
+  <con:testStep type="manualTestStep" name="DB Settings TACHOnetUrvalProcent" id="12168430-c88f-464d-b1ee-6a3d76d8ad41">
     <con:description>Kontroller TACHOnetUrvalProcentsats  i dbo.Setting</con:description>
     <con:settings/>
     <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

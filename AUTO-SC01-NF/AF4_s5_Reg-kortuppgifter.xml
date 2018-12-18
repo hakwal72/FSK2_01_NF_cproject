@@ -4,7 +4,7 @@
     <con:setting id="b7e7c85c-7418-46cc-8356-87d57b4d352ffileName">AF4_s5_Reg-kortuppgifter</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="jdbc" name="TestStep_Korthandelse assertion - JDBC Request" id="cf372455-cdba-48d0-aff2-9f4329851425">
+  <con:testStep type="jdbc" name="TestStep_Korthandelse assertion SkapatPunderlag- JDBC Request" id="cf372455-cdba-48d0-aff2-9f4329851425">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>

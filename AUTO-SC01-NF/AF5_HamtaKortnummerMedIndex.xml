@@ -51,7 +51,7 @@ Where Kort.PersonId = ${#Global#PID_1}</query>
       <con:properties>
         <con:property>
           <con:name>KortnummerMedIndex</con:name>
-          <con:value>0000073544040000</con:value>
+          <con:value>0000036378082000</con:value>
         </con:property>
       </con:properties>
     </con:config>

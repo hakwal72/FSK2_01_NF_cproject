@@ -4,7 +4,7 @@
     <con:setting id="d52dec3d-3aa7-4e19-8b7b-2b38a5067665fileName">AF3_s2_Reg_GenomfordKontroll_Tacho-urval</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="jdbc" name="TestStep_Kontrolltyp (60)_TACHOnetUrval - JDBC Request" id="b01314d0-2cd3-4b34-bb68-4c1f5ec57683">
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp TACHOnetUrvalProcent - JDBC Request" id="b01314d0-2cd3-4b34-bb68-4c1f5ec57683">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -18,12 +18,12 @@
 From GenomfordKontroll Inner Join
   Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
 Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
-  And GenomfordKontroll.KontrolltypId = 'TACHOnetUrval'</con:query>
+  And GenomfordKontroll.KontrolltypId = 'TACHOnetUrvalProcent'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" id="3dc87d66-8fde-439b-854d-500a0414a548" name="Match content of [KontrolltypId]">
         <con:configuration>
           <path>//Results[1]/ResultSet[1]/Row[1]/KontrolltypId[1]/text()</path>
-          <content>TACHOnetUrval</content>
+          <content>TACHOnetUrvalProcent</content>
           <allowWildcards>false</allowWildcards>
           <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
           <ignoreComments>false</ignoreComments>

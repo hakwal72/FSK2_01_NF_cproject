@@ -4,7 +4,9 @@
     <con:setting id="2ec3f4da-b93c-464e-bb69-f4b3b27750dafileName">KortAvsant</con:setting>
   </con:settings>
   <con:call id="70ea2849-35ed-4e01-a445-a0b6160f9535" name="Request 1">
-    <con:settings/>
+    <con:settings>
+      <con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">Mandatory and Data</con:setting>
+    </con:settings>
     <con:encoding>UTF-8</con:encoding>
     <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Personalisera1_0.svc</con:endpoint>
     <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">
