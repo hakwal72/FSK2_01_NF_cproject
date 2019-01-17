@@ -100,7 +100,7 @@ Where Korthandelse.KorthandelsetypId = 'Personaliserat' And Kort.PersonId =
       <delay>5000</delay>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="TestStep_Kortstatus_Personaliserat (TACHO) - JDBC Request 2" id="64a382bf-e44e-4cd3-bff8-233b4ce91c74">
+  <con:testStep type="jdbc" name="TestStep_Kortstatus_Personaliserat (TACHO) - JDBC Request 2" id="64a382bf-e44e-4cd3-bff8-233b4ce91c74" disabled="true">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="686bf272-1d79-443f-ba31-a4348b3f8420" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF4_s6_Reg_Ansokanstatus_Personalisering kort" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="686bf272-1d79-443f-ba31-a4348b3f8420" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF4_s6_Reg_Ansokanstatus_Personalisering kort" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="686bf272-1d79-443f-ba31-a4348b3f8420fileName">AF4_s6_Reg_Ansokanstatus_Personalisering-kort</con:setting>
   </con:settings>

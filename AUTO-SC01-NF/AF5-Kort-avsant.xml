@@ -97,7 +97,7 @@ Where Korthandelse.KorthandelsetypId = 'Avsant' And Kort.PersonId = :PID_1</con:
       <delay>5000</delay>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="TestStep_Kortstatus_Avsant (TACHO) - JDBC Request 2" id="19f5aca0-6341-4db6-ab1b-bb814b2ac86f">
+  <con:testStep type="jdbc" name="TestStep_Kortstatus_Avsant (TACHO) - JDBC Request 2" id="19f5aca0-6341-4db6-ab1b-bb814b2ac86f" disabled="true">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>

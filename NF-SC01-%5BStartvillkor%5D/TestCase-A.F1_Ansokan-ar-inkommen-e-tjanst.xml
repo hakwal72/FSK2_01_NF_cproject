@@ -104,7 +104,7 @@
         <con:wsrmConfig version="1.2"/>
         <con:environmentSpec>
           <con:entry environmentId="a058e6c6-b56c-4e48-99de-eb3a828d2205">
-            <con:authProfile>Tang</con:authProfile>
+            <con:authProfile>Wallner</con:authProfile>
             <con:username>peta02</con:username>
             <con:password>ElisiaZeng16807</con:password>
             <con:domain>tsnet</con:domain>

@@ -225,6 +225,7 @@
       <xs:element name="SistaLeveransdag" type="xs:dateTime"/>
       <xs:element name="Leveransadress" nillable="true" type="tns:LeveransadressDto"/>
       <xs:element minOccurs="0" name="Korkort" nillable="true" type="tns:KorkortDto"/>
+      <xs:element minOccurs="0" name="HMAC" nillable="true" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PersonaliseringsunderlagDto" nillable="true" type="tns:PersonaliseringsunderlagDto"/>

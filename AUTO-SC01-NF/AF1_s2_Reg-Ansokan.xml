@@ -72,7 +72,7 @@ Where Ansokan.PersonId = :PID_1</con:query>
           <ignoreComments>false</ignoreComments>
         </con:configuration>
       </con:assertion>
-      <con:assertion type="XPath Match" id="cfe898a7-58fd-44f5-8544-6d8776d5ea09" name="Match content of [DatumAndrad] using RegEx">
+      <con:assertion type="XPath Match" id="cfe898a7-58fd-44f5-8544-6d8776d5ea09" name="Match content of [DatumAndrad] using RegEx" disabled="true">
         <con:configuration>
           <path>matches( //Results[1]/ResultSet[1]/Row[1]/DatumAndrad[1]/text(), '.+' )</path>
           <content>true</content>
