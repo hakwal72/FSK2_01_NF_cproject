@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="249fb26e-5d6c-4718-bbba-65043b0076f7" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF2_s2_Reg_ GenomfordKontroll_ Avliden Adress" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="249fb26e-5d6c-4718-bbba-65043b0076f7" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF2_s2_Reg_ GenomfordKontroll_ Avliden Adress [Ansokan]" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="249fb26e-5d6c-4718-bbba-65043b0076f7fileName">AF2_s2_Reg_-GenomfordKontroll_-Avliden-Adress</con:setting>
+    <con:setting id="249fb26e-5d6c-4718-bbba-65043b0076f7fileName">AF2_s2_Reg_-GenomfordKontroll_-Avliden-Adress-%5BAnsokan%5D</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_Avliden - JDBC Request" id="7cbd9fbd-f3cf-43be-85c0-a86a6fce5762">
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_Avliden - JDBC Request #0" id="7cbd9fbd-f3cf-43be-85c0-a86a6fce5762">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -17,7 +17,7 @@
       <con:query>Select GenomfordKontroll.*, Ansokan.PersonId
 From GenomfordKontroll Inner Join
   Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
-Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
+Where Ansokan.PersonId = :Id And Ansokan.ArendeTypId = 'Forstagangsansokan'
   And GenomfordKontroll.KontrolltypId = 'Avliden'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" id="a37a169f-0413-4b84-8ea0-2506d8d17619" name="Match content of [KontrolltypId] Avliden">
@@ -40,8 +40,8 @@ Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>
@@ -52,7 +52,7 @@ Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
       <delay>5000</delay>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_Adress - JDBC Request" id="e1596fdd-4bba-43e4-888b-2526fbd76e87">
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_Adress - JDBC Request #0" id="e1596fdd-4bba-43e4-888b-2526fbd76e87">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -65,7 +65,7 @@ Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
       <con:query>Select GenomfordKontroll.*, Ansokan.PersonId
 From GenomfordKontroll Inner Join
   Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
-Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
+Where Ansokan.PersonId = :Id And Ansokan.ArendeTypId = 'Forstagangsansokan'
   And GenomfordKontroll.KontrolltypId = 'Adress'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" id="ed8bc827-5058-45b9-bd36-f82236d722fe" name="Match content of [KontrolltypId]">
@@ -88,8 +88,8 @@ Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="420cdca3-837f-4ed0-8e7c-d225c95c9c73" isOneWay="false" action="urn:bas:fardskrivarkortyt:IHandlaggarService_UppdateraAnsokan" name="UppdateraAnsokan" bindingOperationName="UppdateraAnsokan" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="420cdca3-837f-4ed0-8e7c-d225c95c9c73fileName">UppdateraAnsokan</con:setting>
+  </con:settings>
+  <con:call id="f1379c36-6621-45ab-beac-dd8eebd84459" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <_0:UppdateraAnsokan>\r
+         <!--Optional:-->\r
+         <_0:ansokanuppdateringDto>\r
+            <_0:Kontrolluppdateringar>\r
+               <!--Zero or more repetitions:-->\r
+               <_0:KontrolluppdateringDto>\r
+                  <_0:KontrollId>?</_0:KontrollId>\r
+                  <_0:ManuellHandlaggningGenomford>?</_0:ManuellHandlaggningGenomford>\r
+               </_0:KontrolluppdateringDto>\r
+            </_0:Kontrolluppdateringar>\r
+         </_0:ansokanuppdateringDto>\r
+      </_0:UppdateraAnsokan>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IHandlaggarService_UppdateraAnsokan"/>
+  </con:call>
+</con:operation>

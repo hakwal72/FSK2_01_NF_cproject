@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="069beaa3-6cf8-4957-8fcd-f65b6e12792d" isOneWay="false" action="urn:bas:fardskrivarkortyt:IHandlaggarService_HamtaAnsokanInklusiveIntressentData" name="HamtaAnsokanInklusiveIntressentData" bindingOperationName="HamtaAnsokanInklusiveIntressentData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="069beaa3-6cf8-4957-8fcd-f65b6e12792dfileName">HamtaAnsokanInklusiveIntressentData</con:setting>
+  </con:settings>
+  <con:call id="8385f704-c2bd-47c2-9608-680056ad4eb7" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <_0:HamtaAnsokanInklusiveIntressentData>\r
+         <!--Optional:-->\r
+         <_0:arendenummer>?</_0:arendenummer>\r
+      </_0:HamtaAnsokanInklusiveIntressentData>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IHandlaggarService_HamtaAnsokanInklusiveIntressentData"/>
+  </con:call>
+</con:operation>

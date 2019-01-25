@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="e3f1a333-a83b-4a58-9bb3-8795426ae68a" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF1_s2_Reg_Ansokanhandelse" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="e3f1a333-a83b-4a58-9bb3-8795426ae68a" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF1_s2_Reg_Ansokanhandelse?" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="e3f1a333-a83b-4a58-9bb3-8795426ae68afileName">AF1_s2_Reg_Ansokanhandelse</con:setting>
+    <con:setting id="e3f1a333-a83b-4a58-9bb3-8795426ae68afileName">AF1_s2_Reg_Ansokanhandelse%3F</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="jdbc" name="TestStep_Ansokan registrerad - JDBC Request" id="6ec572c2-52d7-4970-bcf7-899ab4973428">
+  <con:testStep type="jdbc" name="TestStep_Ansokan registrerad - JDBC Request #0" id="6ec572c2-52d7-4970-bcf7-899ab4973428">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -17,7 +17,7 @@
       <con:query>Select Ansokanhandelse.*, Ansokan.PersonId
 From Ansokanhandelse Inner Join
   Ansokan On Ansokan.Id = Ansokanhandelse.AnsokanId
-Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
+Where Ansokan.PersonId = :Id And Ansokanhandelse.AnsokanhandelsetypId =
   'AnsokanRegistrerad'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" id="5fadd8ca-79c8-4549-acf3-6648afc0eff7" name="Match content of [AnsokanhandelsetypId]">
@@ -31,8 +31,8 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>
@@ -43,7 +43,7 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       <delay>5000</delay>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="TestStep_Avi utskickad - JDBC Request" id="085fa7fb-4a71-4674-b3d3-56952b4bed6e">
+  <con:testStep type="jdbc" name="TestStep_Avi utskickad - JDBC Request #0" id="085fa7fb-4a71-4674-b3d3-56952b4bed6e">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -56,7 +56,7 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       <con:query>Select Ansokanhandelse.*, Ansokan.PersonId
 From Ansokanhandelse Inner Join
   Ansokan On Ansokan.Id = Ansokanhandelse.AnsokanId
-Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
+Where Ansokan.PersonId = :Id And Ansokanhandelse.AnsokanhandelsetypId =
   'AviUtskickad'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="JDBC Status" id="84985e58-52a1-4a71-af1e-4daf65ef6bf4" name="JDBC Status"/>
@@ -71,8 +71,8 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>
@@ -83,7 +83,7 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       <delay>5000</delay>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="TestStep_Mejl utskickat - JDBC Request" id="58ca185b-0eae-4517-88dd-70e22c9676d3">
+  <con:testStep type="jdbc" name="TestStep_Mejl utskickat - JDBC Request #0" id="58ca185b-0eae-4517-88dd-70e22c9676d3">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -96,7 +96,7 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       <con:query>Select Ansokanhandelse.*, Ansokan.PersonId
 From Ansokanhandelse Inner Join
   Ansokan On Ansokan.Id = Ansokanhandelse.AnsokanId
-Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
+Where Ansokan.PersonId = :Id And Ansokanhandelse.AnsokanhandelsetypId =
   'MejlUtskickat'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" name="Match content of [ANSOKANHANDELSETYPID=20] Mejl utskickad" id="a0755135-ff56-4e64-ab9e-e366a91187a6">
@@ -110,8 +110,8 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>

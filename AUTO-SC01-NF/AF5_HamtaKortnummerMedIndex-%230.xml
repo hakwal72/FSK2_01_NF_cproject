@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6785c507-4398-4862-8ade-610948f4c88b" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5_HamtaKortnummerMedIndex" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="6785c507-4398-4862-8ade-610948f4c88b" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF5_HamtaKortnummerMedIndex #0" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="6785c507-4398-4862-8ade-610948f4c88bfileName">AF5_HamtaKortnummerMedIndex</con:setting>
+    <con:setting id="6785c507-4398-4862-8ade-610948f4c88bfileName">AF5_HamtaKortnummerMedIndex-%230</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="datasource" name="DataSource KortnummerMedIndex JDBC" id="c25f3fec-bf7d-4772-afe9-b643af604b78">
@@ -18,7 +18,7 @@
           <query>Select Kort.Kortnummer + Kort.Lopnummer + Kort.Ersattningsindex +
   Kort.Fornyelseindex As KortnummerMedIndex
 From Kort
-Where Kort.PersonId = ${#Global#PID_1}</query>
+Where Kort.PersonId = ${#Project#Id_0}</query>
           <fetchSize/>
           <stored-procedure>false</stored-procedure>
         </con:configuration>
@@ -51,7 +51,7 @@ Where Kort.PersonId = ${#Global#PID_1}</query>
       <con:properties>
         <con:property>
           <con:name>KortnummerMedIndex</con:name>
-          <con:value>0000036378082000</con:value>
+          <con:value>0000015820024000</con:value>
         </con:property>
       </con:properties>
     </con:config>

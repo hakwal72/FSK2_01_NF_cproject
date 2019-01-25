@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b7e7c85c-7418-46cc-8356-87d57b4d352f" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF4_s5_Reg kortuppgifter?" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b7e7c85c-7418-46cc-8356-87d57b4d352ffileName">AF4_s5_Reg-kortuppgifter%3F</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="jdbc" name="TestStep_Korthandelse assertion SkapatPunderlag- JDBC Request #0" id="cf372455-cdba-48d0-aff2-9f4329851425">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Korthandelse.*
+From Korthandelse Inner Join
+  Kort On Kort.Id = Korthandelse.KortId
+Where Korthandelse.KorthandelsetypId = 'SkapatPunderlag' And
+  Kort.PersonId = :Id</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="2a8dc261-a2a7-4715-924d-6e61ed780b72" name="Match content of [KorthandelsetypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KorthandelsetypId[1]/text()</path>
+          <content>SkapatPunderlag</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="c88e10ae-11d7-41b9-8e63-2a1c0328b229">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep_Kort assertion SkapatPunderlag- JDBC Request #0" id="476e5850-51c3-4722-a29f-7bd01e5a698d">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select KH.Id As KH_id, K.*
+From Korthandelse KH Inner Join
+  Kort K On K.Id = KH.KortId
+Where KH.KorthandelsetypId = 'SkapatPunderlag' 
+And K.PersonId = :Id</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" name="Match content of [Id] using RegEx" id="ffbd54ac-79a4-4a63-8ca3-8f1e7f7fa468">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Id[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" name="Match content of [PersonId] using RegEx" id="b198fd9c-f68a-4140-83a6-73f4ea39f651">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/PersonId[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="02fd92be-faa2-4daa-9eef-db5a7ae691e6" name="Match content of [PersonId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/PersonId[1]/text()</path>
+          <content>10445994</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" name="Match content of [Arendenummer] using RegEx" id="42c3f32f-0049-4ce1-b1d2-6e72318c899b">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Arendenummer[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="d94d9e03-b87f-408b-abbe-99dce002c9cc" name="Match content of [Kortnummer] using RegEx" disabled="true">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Kortnummer[1]/text()</path>
+          <content>0000015820024</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="fc2b90e7-4b93-41b0-b836-745df8701e92" name="Match content of [Ersattningsindex] using RegEx" disabled="true">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Ersattningsindex[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="247d9ed9-242e-4a37-b779-664e4c33297d" name="Match content of [Fornyelseindex] using RegEx" disabled="true">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Fornyelseindex[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="66519424-e4ad-40ae-814e-ff3bef21da0c" name="Match content of [UtfardandeMyndighet]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/UtfardandeMyndighet[1]/text()</path>
+          <content>Transportstyrelsen</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="4da036a5-a9c7-46b8-b3a5-a750239d119f" name="Match content of [UtfardandeMedlemsstat]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/UtfardandeMedlemsstat[1]/text()</path>
+          <content>Sverige</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="e9a620c9-f94f-455b-9b31-093c81fcf607" name="Match content of [ForstaGiltighetsdag] using RegEx" disabled="true">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ForstaGiltighetsdag[1]</path>
+          <content>&lt;ForstaGiltighetsdag/></content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="dc64bff5-69ff-4251-97bc-7953dc2d6fb3" name="Match content of [SistaGiltighetsdag] using RegEx" disabled="true">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/SistaGiltighetsdag[1]</path>
+          <content>&lt;SistaGiltighetsdag/></content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="73b8e52f-f258-4908-bc18-875c0ce0e116" name="Match content of [Reknummer] using RegEx" disabled="true">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Reknummer[1]</path>
+          <content>&lt;Reknummer/></content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="5d890c35-b45c-4bd3-aac2-9673a6b1a7f6" name="Match content of [KorttypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KorttypId[1]/text()</path>
+          <content>Forarkort</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="4f630e68-b525-4649-b8f8-a50bdef9af7b" name="Match content of [FardskrivartillampningId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/FardskrivartillampningId[1]/text()</path>
+          <content>G2</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="29737b36-aa07-41f3-a15d-eed93fcca792" name="Match content of [ForvaringsstatusId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ForvaringsstatusId[1]/text()</path>
+          <content>EjIForvar</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="a651f300-df0f-432d-b5d0-4dd353f8a589" name="Match content of [Utfardandedatum] using RegEx">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Utfardandedatum[1]</path>
+          <content>&lt;Utfardandedatum/></content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="db949c0c-edb5-4478-a837-79a16c39bd99" name="XPath Match">
+        <con:configuration>
+          <path/>
+          <content/>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="ad8d62fa-aa2d-4b31-a917-e9460c908466" name="Check for existence of [AnsokanId]">
+        <con:configuration>
+          <path>exists( //Results/ResultSet/Row/AnsokanId)</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="cfab1f7b-4000-4553-974f-5b02847c668a" name="XPath Match 2">
+        <con:configuration/>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="dcf9a6f3-f80c-4ff0-a725-508626213343" name="XPath Match 3">
+        <con:configuration/>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="e958b745-5a0e-4f4f-bb68-217a5e191b16" name="XPath Match 4">
+        <con:configuration/>
+      </con:assertion>
+      <con:assertion type="XQuery Match" id="b50bfc77-b3b0-425b-ac8e-e4b1f950eab7" name="XQuery Match">
+        <con:configuration/>
+      </con:assertion>
+      <con:assertion type="MessageContentAssertion" id="2c69d24d-f3f2-4553-bfb9-1c08602e7b02" name="Message Content Assertion">
+        <con:configuration xsi:type="con:MessageContentAssertion">
+          <con:originalMessage><![CDATA[<Results>
+   <ResultSet fetchSize="100">
+      <Row rowNumber="1">
+         <KH_id>2021724</KH_id>
+         <Id>578411</Id>
+         <PersonId>10445994</PersonId>
+         <Arendenummer>TSTRYT 2019/401</Arendenummer>
+         <Kortnummer>0000015820024</Kortnummer>
+         <Ersattningsindex>0</Ersattningsindex>
+         <Fornyelseindex>0</Fornyelseindex>
+         <Lopnummer>0</Lopnummer>
+         <UtfardandeMyndighet>Transportstyrelsen</UtfardandeMyndighet>
+         <UtfardandeMedlemsstat>Sverige</UtfardandeMedlemsstat>
+         <ForstaGiltighetsdag/>
+         <SistaGiltighetsdag/>
+         <Reknummer/>
+         <AnsokanId>596636</AnsokanId>
+         <KorttypId>Forarkort</KorttypId>
+         <FardskrivartillampningId>G2</FardskrivartillampningId>
+         <ForvaringsstatusId>EjIForvar</ForvaringsstatusId>
+         <Utfardandedatum/>
+      </Row>
+   </ResultSet>
+</Results>]]></con:originalMessage>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XQuery Match" id="93f81b27-ccb3-434c-a01e-68e935aa2cdb" name="XQuery Match 2">
+        <con:configuration/>
+      </con:assertion>
+      <con:assertion type="XQuery Match" id="2818d2ad-e701-469d-be70-4ce594bf9659" name="XQuery Match 3">
+        <con:configuration/>
+      </con:assertion>
+      <con:assertion type="XQuery Match" id="d5ff482f-d7e1-4ba0-bd5b-320f559c5988" name="XQuery Match 4">
+        <con:configuration/>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>c88e10ae-11d7-41b9-8e63-2a1c0328b229</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+</con:testCase>

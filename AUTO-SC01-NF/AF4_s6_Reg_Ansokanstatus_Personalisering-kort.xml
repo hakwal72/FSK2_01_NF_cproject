@@ -4,7 +4,7 @@
     <con:setting id="686bf272-1d79-443f-ba31-a4348b3f8420fileName">AF4_s6_Reg_Ansokanstatus_Personalisering-kort</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="jdbc" name="TestStep_Personaliering kort - JDBC Request" id="95523947-936b-4159-8f98-8be13824f53e">
+  <con:testStep type="jdbc" name="TestStep_Personaliering kort - JDBC Request" id="95523947-936b-4159-8f98-8be13824f53e" disabled="true">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>

@@ -75,7 +75,7 @@
 From Korthandelse Inner Join
   Kort On Kort.Id = Korthandelse.KortId
 Where Korthandelse.KorthandelsetypId = 'Personaliserat' And Kort.PersonId =
-  :PID_1</con:query>
+  :Id</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" id="2a8dc261-a2a7-4715-924d-6e61ed780b72" name="Match content of [KorthandelsetypId] Personaliserat">
         <con:configuration>
@@ -88,8 +88,8 @@ Where Korthandelse.KorthandelsetypId = 'Personaliserat' And Kort.PersonId =
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>

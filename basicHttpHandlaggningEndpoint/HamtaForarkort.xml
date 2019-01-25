@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="084a98c2-4549-43d6-b6b2-d114421eaf72" isOneWay="false" action="urn:bas:fardskrivarkortyt:IHandlaggarService_HamtaForarkort" name="HamtaForarkort" bindingOperationName="HamtaForarkort" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="084a98c2-4549-43d6-b6b2-d114421eaf72fileName">HamtaForarkort</con:setting>
+  </con:settings>
+  <con:call id="59f43404-8521-43b4-991f-0f8418526d59" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <_0:HamtaForarkort>\r
+         <!--Optional:-->\r
+         <_0:personId>?</_0:personId>\r
+      </_0:HamtaForarkort>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IHandlaggarService_HamtaForarkort"/>
+  </con:call>
+</con:operation>

@@ -4,7 +4,7 @@
     <con:setting id="388fe93b-c795-4f72-b41f-66ed2eeb5f9afileName">AF3_s3_Reg_Ansokanhandelse_Ansokan-gdk</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="jdbc" name="TestStep_Ansokan godkand - JDBC Request" id="6f34d417-a9ab-4830-b27f-97ceead34a2b">
+  <con:testStep type="jdbc" name="TestStep_Ansokan godkand - JDBC Request #0" id="6f34d417-a9ab-4830-b27f-97ceead34a2b">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -17,7 +17,7 @@
       <con:query>Select Ansokanhandelse.*, Ansokan.PersonId
 From Ansokanhandelse Inner Join
   Ansokan On Ansokan.Id = Ansokanhandelse.AnsokanId
-Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
+Where Ansokan.PersonId = :Id And Ansokanhandelse.AnsokanhandelsetypId =
   'AnsokanGodkand'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" name="Match content of [ANSOKANHANDELSETYPID] Ansokan godkand" id="cb7e8fd2-8205-4559-88ca-02d43a1e120f">
@@ -31,8 +31,8 @@ Where Ansokan.PersonId = :PID_1 And Ansokanhandelse.AnsokanhandelsetypId =
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>

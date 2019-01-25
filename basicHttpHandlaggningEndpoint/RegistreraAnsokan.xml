@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="772769e8-1333-418c-80f8-83971686e939" isOneWay="false" action="urn:bas:fardskrivarkortyt:IHandlaggarService_RegistreraAnsokan" name="RegistreraAnsokan" bindingOperationName="RegistreraAnsokan" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="772769e8-1333-418c-80f8-83971686e939fileName">RegistreraAnsokan</con:setting>
+  </con:settings>
+  <con:call id="84404394-5365-4001-a25b-e69fe9b1f67d" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <_0:RegistreraAnsokan>\r
+         <!--Optional:-->\r
+         <_0:ansokanDto>\r
+            <_0:Personnummer>?</_0:Personnummer>\r
+            <_0:Telefonnummer>?</_0:Telefonnummer>\r
+            <_0:Epost>?</_0:Epost>\r
+            <_0:Utfardandeorsak>?</_0:Utfardandeorsak>\r
+            <_0:Datum>?</_0:Datum>\r
+            <_0:SkaBetalas>?</_0:SkaBetalas>\r
+         </_0:ansokanDto>\r
+      </_0:RegistreraAnsokan>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IHandlaggarService_RegistreraAnsokan"/>
+  </con:call>
+</con:operation>

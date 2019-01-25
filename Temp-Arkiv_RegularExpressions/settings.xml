@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="37b4f811-0285-4009-965b-1010bc59d74e" name="Temp Arkiv_RegularExpressions" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Arkiv med bra RegEx l?nkar och exempel
+
+Regular Expressions siter:
+https://regex101.com/library?orderBy=MOST_POINTS   (har bra exempelbibliotek och m?jlighet att testa RegEx online)</con:description>
+  <con:settings>
+    <con:setting id="37b4f811-0285-4009-965b-1010bc59d74efileName">Temp-Arkiv_RegularExpressions</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>PARALLELL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b8e8b3b3-5d17-4028-88b5-7fab410565ee" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AF1_s2_Reg Ansokan?" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b8e8b3b3-5d17-4028-88b5-7fab410565eefileName">AF1_s2_Reg-Ansokan%3F</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="jdbc" name="TestStep F1_S2_Ansokan.*  - JDBC Request #0" id="286fe488-f0f3-434b-a720-110251771d9c">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokan.*
+From Ansokan
+Where Ansokan.PersonId = :Id</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="c52d887f-b8ee-4dca-a4c7-023efe50231d" name="Match content of [Id] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Id[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="5ddc4289-dddd-47e5-a7cd-c371a42d66ea" name="Match content of [Arendenummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Arendenummer[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="fcc56d57-b93f-426d-b5f3-0e307e4533fe" name="Match content of [PersonId] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/PersonId[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="3be27b76-2a43-4a07-afac-a65907272fdd" name="Match content of [AntalKort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/AntalKort[1]/text()</path>
+          <content>1</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="e2419017-b2a8-4907-b4c3-f24981ecb573" name="Match content of [AnsokanInkommen] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/AnsokanInkommen[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="8820c560-54bb-4e7a-97b1-b523f882157a" name="Match content of [KorttypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KorttypId[1]/text()</path>
+          <content>Forarkort</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="cfe898a7-58fd-44f5-8544-6d8776d5ea09" name="Match content of [DatumAndrad] using RegEx" disabled="true">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/DatumAndrad[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="21fa3fa9-5e68-45a8-b95d-cab75b98a6fe" name="Match content of [ArendeTypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ArendeTypId[1]/text()</path>
+          <content>Forstagangsansokan</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="5e7bdc4d-5b8f-4c16-8216-f35b131b0207" name="Match content of [Betalad]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Betalad[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="7c707974-8c88-4443-a05a-2cb8986458e0" name="Match content of [UtfardandeLandForarkort] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/UtfardandeLandForarkort[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="85ea3f7d-0e38-45d7-94c8-56eb8dc6eae5" name="Match content of [UtlandsktForarkortsnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/UtlandsktForarkortsnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="73224dad-8b4a-4e7c-9c22-a078f7e743ee" name="Match content of [Telefonnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Telefonnummer[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="9ca32170-9b67-44cf-af90-cea9d0ac8998" name="Match content of [Epost] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Epost[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="99c5a4e2-edf6-4864-966a-68707befefd1" name="Match content of [UtfardandeOrsakId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/UtfardandeOrsakId[1]/text()</path>
+          <content>Forstagangsansokan</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="fabc43b6-eb2b-487f-a3e7-6e581c6f5fc7" name="Match content of [Elev]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Elev[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="c6c70b75-1d85-45cf-819a-6388ba9b8b33" name="Match content of [EjErsattningskort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/EjErsattningskort[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="8f61d19c-54a4-4b87-9c31-eaa3944097dd" name="Match content of [Fardskrivarkortnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Fardskrivarkortnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="1e119ad9-e41d-4212-befc-be15f64e5d8f" name="Match content of [Korkortsnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Korkortsnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="1170235d-d2ef-4342-931c-fbf5c0407448" name="Match content of [KorkortUtfardandeland] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/KorkortUtfardandeland[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="d7151e32-c45b-43b4-9645-a507d3682687" name="Match content of [PrisPerKort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/PrisPerKort[1]/text()</path>
+          <content>100</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="742f7ba3-e722-466d-b5fb-e40b74574c3e">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep F1_S2_Ansokan.*  - JDBC Request #1" id="f1cc8638-9bba-4563-94b4-b3adf06dddb3">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokan.*
+From Ansokan
+Where Ansokan.PersonId = :Id</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="c52d887f-b8ee-4dca-a4c7-023efe50231d" name="Match content of [Id] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Id[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="5ddc4289-dddd-47e5-a7cd-c371a42d66ea" name="Match content of [Arendenummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Arendenummer[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="fcc56d57-b93f-426d-b5f3-0e307e4533fe" name="Match content of [PersonId] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/PersonId[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="3be27b76-2a43-4a07-afac-a65907272fdd" name="Match content of [AntalKort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/AntalKort[1]/text()</path>
+          <content>1</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="e2419017-b2a8-4907-b4c3-f24981ecb573" name="Match content of [AnsokanInkommen] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/AnsokanInkommen[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="8820c560-54bb-4e7a-97b1-b523f882157a" name="Match content of [KorttypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KorttypId[1]/text()</path>
+          <content>Forarkort</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="cfe898a7-58fd-44f5-8544-6d8776d5ea09" name="Match content of [DatumAndrad] using RegEx" disabled="true">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/DatumAndrad[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="21fa3fa9-5e68-45a8-b95d-cab75b98a6fe" name="Match content of [ArendeTypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ArendeTypId[1]/text()</path>
+          <content>Forstagangsansokan</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="5e7bdc4d-5b8f-4c16-8216-f35b131b0207" name="Match content of [Betalad]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Betalad[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="7c707974-8c88-4443-a05a-2cb8986458e0" name="Match content of [UtfardandeLandForarkort] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/UtfardandeLandForarkort[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="85ea3f7d-0e38-45d7-94c8-56eb8dc6eae5" name="Match content of [UtlandsktForarkortsnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/UtlandsktForarkortsnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="73224dad-8b4a-4e7c-9c22-a078f7e743ee" name="Match content of [Telefonnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Telefonnummer[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="9ca32170-9b67-44cf-af90-cea9d0ac8998" name="Match content of [Epost] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Epost[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="99c5a4e2-edf6-4864-966a-68707befefd1" name="Match content of [UtfardandeOrsakId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/UtfardandeOrsakId[1]/text()</path>
+          <content>Forstagangsansokan</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="fabc43b6-eb2b-487f-a3e7-6e581c6f5fc7" name="Match content of [Elev]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Elev[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="c6c70b75-1d85-45cf-819a-6388ba9b8b33" name="Match content of [EjErsattningskort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/EjErsattningskort[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="8f61d19c-54a4-4b87-9c31-eaa3944097dd" name="Match content of [Fardskrivarkortnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Fardskrivarkortnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="1e119ad9-e41d-4212-befc-be15f64e5d8f" name="Match content of [Korkortsnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Korkortsnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="1170235d-d2ef-4342-931c-fbf5c0407448" name="Match content of [KorkortUtfardandeland] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/KorkortUtfardandeland[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="d7151e32-c45b-43b4-9645-a507d3682687" name="Match content of [PrisPerKort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/PrisPerKort[1]/text()</path>
+          <content>100</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_1}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay 2" id="a7291419-1c8f-47f5-b488-9316c2949b97">
+    <con:settings/>
+    <con:config>
+      <delay>5000</delay>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="TestStep F1_S2_Ansokan.*  - JDBC Request #2" id="24d867e9-e19f-4461-ad5e-cf0778c59634">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>Select Ansokan.*
+From Ansokan
+Where Ansokan.PersonId = :Id</con:query>
+      <con:storedProcedure>false</con:storedProcedure>
+      <con:assertion type="XPath Match" id="c52d887f-b8ee-4dca-a4c7-023efe50231d" name="Match content of [Id] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Id[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="5ddc4289-dddd-47e5-a7cd-c371a42d66ea" name="Match content of [Arendenummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Arendenummer[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="fcc56d57-b93f-426d-b5f3-0e307e4533fe" name="Match content of [PersonId] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/PersonId[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="3be27b76-2a43-4a07-afac-a65907272fdd" name="Match content of [AntalKort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/AntalKort[1]/text()</path>
+          <content>1</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="e2419017-b2a8-4907-b4c3-f24981ecb573" name="Match content of [AnsokanInkommen] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/AnsokanInkommen[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="8820c560-54bb-4e7a-97b1-b523f882157a" name="Match content of [KorttypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/KorttypId[1]/text()</path>
+          <content>Forarkort</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="cfe898a7-58fd-44f5-8544-6d8776d5ea09" name="Match content of [DatumAndrad] using RegEx" disabled="true">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/DatumAndrad[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="21fa3fa9-5e68-45a8-b95d-cab75b98a6fe" name="Match content of [ArendeTypId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/ArendeTypId[1]/text()</path>
+          <content>Forstagangsansokan</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="5e7bdc4d-5b8f-4c16-8216-f35b131b0207" name="Match content of [Betalad]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Betalad[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="7c707974-8c88-4443-a05a-2cb8986458e0" name="Match content of [UtfardandeLandForarkort] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/UtfardandeLandForarkort[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="85ea3f7d-0e38-45d7-94c8-56eb8dc6eae5" name="Match content of [UtlandsktForarkortsnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/UtlandsktForarkortsnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="73224dad-8b4a-4e7c-9c22-a078f7e743ee" name="Match content of [Telefonnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Telefonnummer[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="9ca32170-9b67-44cf-af90-cea9d0ac8998" name="Match content of [Epost] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Epost[1]/text(), '.+' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="99c5a4e2-edf6-4864-966a-68707befefd1" name="Match content of [UtfardandeOrsakId]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/UtfardandeOrsakId[1]/text()</path>
+          <content>Forstagangsansokan</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="fabc43b6-eb2b-487f-a3e7-6e581c6f5fc7" name="Match content of [Elev]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/Elev[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="c6c70b75-1d85-45cf-819a-6388ba9b8b33" name="Match content of [EjErsattningskort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/EjErsattningskort[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="8f61d19c-54a4-4b87-9c31-eaa3944097dd" name="Match content of [Fardskrivarkortnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Fardskrivarkortnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="1e119ad9-e41d-4212-befc-be15f64e5d8f" name="Match content of [Korkortsnummer] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/Korkortsnummer[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="1170235d-d2ef-4342-931c-fbf5c0407448" name="Match content of [KorkortUtfardandeland] using RegEx">
+        <con:configuration>
+          <path>matches( //Results[1]/ResultSet[1]/Row[1]/KorkortUtfardandeland[1], '^$' )</path>
+          <content>true</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:assertion type="XPath Match" id="d7151e32-c45b-43b4-9645-a507d3682687" name="Match content of [PrisPerKort]">
+        <con:configuration>
+          <path>//Results[1]/ResultSet[1]/Row[1]/PrisPerKort[1]/text()</path>
+          <content>100</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_2}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>e247d951-5e39-4af9-9847-cdd26f9bea08</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>742f7ba3-e722-466d-b5fb-e40b74574c3e</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>a7291419-1c8f-47f5-b488-9316c2949b97</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:tagId>1909d09b-0085-4ff2-ac61-5bdfdaf9234d</con:tagId>
+  <con:tagId>76759334-92e9-4814-9046-6118125f1876</con:tagId>
+</con:testCase>

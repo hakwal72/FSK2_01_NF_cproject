@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="e4ecc10a-2e6b-4d54-9e8c-f078770ce704" name="Ny Tom Testsvit" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e4ecc10a-2e6b-4d54-9e8c-f078770ce704fileName">Ny-Tom-Testsvit</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

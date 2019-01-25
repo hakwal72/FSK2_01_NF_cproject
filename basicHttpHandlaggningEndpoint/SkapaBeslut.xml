@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="cd14deb1-5be9-426d-8c74-e8e1aa483fb7" isOneWay="false" action="urn:bas:fardskrivarkortyt:IHandlaggarService_SkapaBeslut" name="SkapaBeslut" bindingOperationName="SkapaBeslut" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cd14deb1-5be9-426d-8c74-e8e1aa483fb7fileName">SkapaBeslut</con:setting>
+  </con:settings>
+  <con:call id="a43804de-4aa4-4e78-ad79-59d7b85f8c28" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <_0:SkapaBeslut>\r
+         <!--Optional:-->\r
+         <_0:arendenummer>?</_0:arendenummer>\r
+         <!--Optional:-->\r
+         <_0:beslutstyp>?</_0:beslutstyp>\r
+      </_0:SkapaBeslut>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IHandlaggarService_SkapaBeslut"/>
+  </con:call>
+</con:operation>

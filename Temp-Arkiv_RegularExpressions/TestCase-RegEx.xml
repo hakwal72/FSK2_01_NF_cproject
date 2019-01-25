@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="37b55f42-ec97-41ac-92c6-214805e407f9" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase RegEx" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="37b55f42-ec97-41ac-92c6-214805e407f9fileName">TestCase-RegEx</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="manualTestStep" name="RegEx Personnummer" id="4bc7da34-9950-4a18-913f-e6fe476c7368">
+    <con:description>^(19|20)?([0-9]{2})(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])([-+])?(?!0000)(?:[0-9]{4})[ \t]*$</con:description>
+    <con:settings/>
+    <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  </con:testStep>
+  <con:testStep type="manualTestStep" name="RegEx för ärendenummer" id="4bae53b3-759e-4901-8e7f-6234f07d5abf">
+    <con:description>: ^TSTRYT \d+\/\d+$</con:description>
+    <con:settings/>
+    <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  </con:testStep>
+  <con:testStep type="manualTestStep" name="Regex för ?" id="e8f9a0ac-ab86-417b-92bb-2e7cfed373d2">
+    <con:description/>
+    <con:settings/>
+    <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

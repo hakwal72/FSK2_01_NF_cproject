@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="7a77175d-1ea4-4bff-97bf-7fec479dbc0c" isOneWay="false" action="urn:bas:fardskrivarkortyt:IHandlaggarService_SparaHandelse" name="SparaHandelse" bindingOperationName="SparaHandelse" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7a77175d-1ea4-4bff-97bf-7fec479dbc0cfileName">SparaHandelse</con:setting>
+  </con:settings>
+  <con:call id="6c8cefc8-cdc4-43fd-a0f4-8c341e2e73f9" name="Request 1">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:_0="http://TS.FardskrivarkortYt.Schemas/1_0">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <_0:SparaHandelse>\r
+         <!--Optional:-->\r
+         <_0:kortId>?</_0:kortId>\r
+         <!--Optional:-->\r
+         <_0:korthandelse>\r
+            <_0:Datum>?</_0:Datum>\r
+            <_0:Korthandelsetyp>?</_0:Korthandelsetyp>\r
+         </_0:korthandelse>\r
+      </_0:SparaHandelse>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IHandlaggarService_SparaHandelse"/>
+  </con:call>
+</con:operation>

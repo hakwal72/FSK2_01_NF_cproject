@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="2d437de4-55f1-44fd-9497-d8f4152341f8" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF2_s4_Reg_GenomfordKontroll_KK behorigheter[Basvillkor]" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:description>4 Kontroll av beh?righeter f?r den s?kande.</con:description>
+<con:testCase id="2d437de4-55f1-44fd-9497-d8f4152341f8" discardOkResults="true" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AF2_s4_Reg_GenomfordKontroll_KK behorigheter [Basvillkor]" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>4 Kontroll av behorigheter for den sokande.</con:description>
   <con:settings>
-    <con:setting id="2d437de4-55f1-44fd-9497-d8f4152341f8fileName">AF2_s4_Reg_GenomfordKontroll_KK-behorigheter%5BBasvillkor%5D</con:setting>
+    <con:setting id="2d437de4-55f1-44fd-9497-d8f4152341f8fileName">AF2_s4_Reg_GenomfordKontroll_KK-behorigheter-%5BBasvillkor%5D</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_KorkortsBehorigheter - JDBC Request" id="0035a4d3-59e3-4418-a82a-9bafa4467438">
+  <con:testStep type="jdbc" name="TestStep_Kontrolltyp_KorkortsBehorigheter - JDBC Request #0" id="0035a4d3-59e3-4418-a82a-9bafa4467438">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -18,7 +18,7 @@
       <con:query>Select GenomfordKontroll.*, Ansokan.PersonId
 From GenomfordKontroll Inner Join
   Ansokan On Ansokan.Id = GenomfordKontroll.AnsokanId
-Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
+Where Ansokan.PersonId = :Id And Ansokan.ArendeTypId = 'Forstagangsansokan'
   And GenomfordKontroll.KontrolltypId = 'KorkortsBehorigheter'</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="JDBC Status" id="84985e58-52a1-4a71-af1e-4daf65ef6bf4" name="JDBC Status"/>
@@ -42,8 +42,8 @@ Where Ansokan.PersonId = :PID_1 And Ansokan.ArendeTypId = 'Forstagangsansokan'
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>

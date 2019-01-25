@@ -11,7 +11,7 @@
       <con:expectedResult>TACHOnetUrvalProcentsats = 0</con:expectedResult>
     </con:config>
   </con:testStep>
-  <con:testStep type="manualTestStep" name="Wcf Web.config_Forbered NF" id="d1dc9184-95ad-4b8a-b0db-c86dd8a20a14">
+  <con:testStep type="manualTestStep" name="Wcf Web.config_Forbered NF" id="d1dc9184-95ad-4b8a-b0db-c86dd8a20a14" disabled="true">
     <con:description>AnsFskYt-t.ia.tsnet.se          Webapps\wcf</con:description>
     <con:settings/>
     <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -94,7 +94,7 @@ declare @personId int = 10445994
     <con:settings/>
     <con:config xsi:type="con:ManualTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
   </con:testStep>
-  <con:testStep type="jdbc" name="Rensa SQL PID_1" id="c5207b2b-19a7-4f37-8edb-0b326a1a1ac8">
+  <con:testStep type="jdbc" name="Rensa SQL Id_0 190703079814" id="c5207b2b-19a7-4f37-8edb-0b326a1a1ac8">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -106,7 +106,7 @@ declare @personId int = 10445994
       <con:connectionProperties/>
       <con:query>begin transaction
 
-declare @personId int = :PID_1
+declare @personId int = :Id_0
 
     delete FROM [AnsFskYt-t].[dbo].[Korthandelse]
   where id in
@@ -184,8 +184,200 @@ declare @personId int = :PID_1
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
+          <con:name>Id_0</con:name>
           <con:value>10445994</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="Rensa SQL Id_1 190703239814" id="e1ee57c1-0c54-4535-b986-749509dc0b3b">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>begin transaction
+
+declare @personId int = :Id_1
+
+    delete FROM [AnsFskYt-t].[dbo].[Korthandelse]
+  where id in
+  (
+   select KH.id 
+      from [AnsFskYt-t].[dbo].[Korthandelse] KH
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KH.KortId=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+  delete from [AnsFskYt-t].[dbo].[KortIntressent]
+  where id in
+  (
+   select KI.id 
+      from [AnsFskYt-t].[dbo].[KortIntressent] KI
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KI.Id=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete from [AnsFskYt-t].[dbo].[Kort]
+  where id in
+  (
+   select K.id 
+      from  [AnsFskYt-t].[dbo].[Kort] K 
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete FROM [AnsFskYt-t].[dbo].[Beslut]
+  where id in
+  (
+   select B.id 
+      from [AnsFskYt-t].[dbo].[Beslut] B
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = B.Id)
+	  where A.PersonId=@personId
+  )
+  
+      delete FROM [AnsFskYt-t].[dbo].[GenomfordKontroll]
+  where id in
+  (
+   select GK.id 
+      from [AnsFskYt-t].[dbo].[GenomfordKontroll] GK
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = GK.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokanhandelse]
+  where id in
+  (
+   select AH.id 
+      from [AnsFskYt-t].[dbo].[Ansokanhandelse] AH
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = AH.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokan]
+  where id in
+  (
+   select A.id 
+      from [AnsFskYt-t].[dbo].[Ansokan] A
+	  where A.PersonId=@personId
+  )
+
+  commit</con:query>
+      <con:assertion type="XPath Match" id="eb2c6db3-7732-4313-86d4-6db893c52208" name="Match content of [UpdateCount]">
+        <con:configuration>
+          <path>//Results[1]/UpdateCount[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>Id_1</con:name>
+          <con:value>10446034</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="jdbc" name="Rensa SQL Id_2 190703069823" id="775ffd0b-33ab-4462-9826-d70f09f0a74a">
+    <con:settings>
+      <con:setting id="prettyPrintResponse">true</con:setting>
+    </con:settings>
+    <con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dbConnectionName>AnsFsk-T MS SQL JDBC</con:dbConnectionName>
+      <con:driver>net.sourceforge.jtds.jdbc.Driver</con:driver>
+      <con:connectionString>jdbc:jtds:sqlserver://apphotellStockvik-db.ia.tsnet.se:1433/AnsFskYt-t;domain=&lt;yourdomain>;trusted_connection=yes</con:connectionString>
+      <con:password>ElisiaZeng16806</con:password>
+      <con:connectionProperties/>
+      <con:query>begin transaction
+
+declare @personId int = :Id_2
+
+    delete FROM [AnsFskYt-t].[dbo].[Korthandelse]
+  where id in
+  (
+   select KH.id 
+      from [AnsFskYt-t].[dbo].[Korthandelse] KH
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KH.KortId=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+  delete from [AnsFskYt-t].[dbo].[KortIntressent]
+  where id in
+  (
+   select KI.id 
+      from [AnsFskYt-t].[dbo].[KortIntressent] KI
+	  join [AnsFskYt-t].[dbo].[Kort] K on (KI.Id=K.Id)
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete from [AnsFskYt-t].[dbo].[Kort]
+  where id in
+  (
+   select K.id 
+      from  [AnsFskYt-t].[dbo].[Kort] K 
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = K.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+    delete FROM [AnsFskYt-t].[dbo].[Beslut]
+  where id in
+  (
+   select B.id 
+      from [AnsFskYt-t].[dbo].[Beslut] B
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = B.Id)
+	  where A.PersonId=@personId
+  )
+  
+      delete FROM [AnsFskYt-t].[dbo].[GenomfordKontroll]
+  where id in
+  (
+   select GK.id 
+      from [AnsFskYt-t].[dbo].[GenomfordKontroll] GK
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = GK.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokanhandelse]
+  where id in
+  (
+   select AH.id 
+      from [AnsFskYt-t].[dbo].[Ansokanhandelse] AH
+	  join [AnsFskYt-t].[dbo].[Ansokan] A on (A.Id = AH.AnsokanId)
+	  where A.PersonId=@personId
+  )
+
+        delete FROM [AnsFskYt-t].[dbo].[Ansokan]
+  where id in
+  (
+   select A.id 
+      from [AnsFskYt-t].[dbo].[Ansokan] A
+	  where A.PersonId=@personId
+  )
+
+  commit</con:query>
+      <con:assertion type="XPath Match" id="eb2c6db3-7732-4313-86d4-6db893c52208" name="Match content of [UpdateCount]">
+        <con:configuration>
+          <path>//Results[1]/UpdateCount[1]/text()</path>
+          <content>0</content>
+          <allowWildcards>false</allowWildcards>
+          <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+          <ignoreComments>false</ignoreComments>
+        </con:configuration>
+      </con:assertion>
+      <con:properties>
+        <con:property>
+          <con:name>Id_2</con:name>
+          <con:value>10444452</con:value>
         </con:property>
       </con:properties>
     </con:config>

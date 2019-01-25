@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="9c370dbc-b0c6-4bcb-8e78-c3a9275392b0" wsaVersion="NONE" name="basicHttpHandlaggningEndpoint" type="wsdl" bindingName="{http://TS.Fardskrivarkort.Schemas/1_0}basicHttpHandlaggningEndpoint" soapVersion="1_1" anonymous="optional" definition="http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9c370dbc-b0c6-4bcb-8e78-c3a9275392b0fileName">basicHttpHandlaggningEndpoint</con:setting>
+  </con:settings>
+  <con:endpoints>
+    <con:endpoint>http://ansfskyt-t.ia.tsnet.se/wcf/Handlaggning1_0.svc</con:endpoint>
+  </con:endpoints>
+</con:interface>

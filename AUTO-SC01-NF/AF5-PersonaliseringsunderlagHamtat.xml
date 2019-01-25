@@ -4,12 +4,12 @@
     <con:setting id="7ef40bdb-a0df-42a9-be4c-b2d9a2d83d1dfileName">AF5-PersonaliseringsunderlagHamtat</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="request" id="4c76d6f5-6ca7-49c5-968d-e9842dd73fd3" name="PersonaliseringsunderlagHamtat - Request 1">
+  <con:testStep type="request" id="4c76d6f5-6ca7-49c5-968d-e9842dd73fd3" name="PersonaliseringsunderlagHamtat - Request 0">
     <con:settings/>
     <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:interface>basicHttpPersonaliseraEndpoint</con:interface>
       <con:operation>PersonaliseringsunderlagHamtat</con:operation>
-      <con:request name="PersonaliseringsunderlagHamtat - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5746f31b-1f8e-4259-8a11-3aaf01eeca67">
+      <con:request name="PersonaliseringsunderlagHamtat - Request 0" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="5746f31b-1f8e-4259-8a11-3aaf01eeca67">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -41,6 +41,7 @@
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
         <con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:bas:fardskrivarkortyt:IPersonaliseraService_KvitteraPersonaliseringsunderlag"/>
         <con:wsrmConfig version="1.2"/>
         <con:environmentSpec>
@@ -57,7 +58,7 @@
       <delay>15000</delay>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="TestStep_Korthandelse Personaliseringsunderlag hamtat - JDBC Request" id="dfdde15a-75cd-45c4-b58a-09819f8a3a5f">
+  <con:testStep type="jdbc" name="TestStep_Korthandelse Personaliseringsunderlag hamtat - JDBC Request #0" id="dfdde15a-75cd-45c4-b58a-09819f8a3a5f">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -71,7 +72,7 @@
 From Korthandelse Inner Join
   Kort On Kort.Id = Korthandelse.KortId
 Where Korthandelse.KorthandelsetypId = 'PunderlagHamtat' And
-  Kort.PersonId = :PID_1</con:query>
+  Kort.PersonId = :Id</con:query>
       <con:storedProcedure>false</con:storedProcedure>
       <con:assertion type="XPath Match" id="2a8dc261-a2a7-4715-924d-6e61ed780b72" name="Match content of [KorthandelsetypId]">
         <con:configuration>
@@ -84,8 +85,8 @@ Where Korthandelse.KorthandelsetypId = 'PunderlagHamtat' And
       </con:assertion>
       <con:properties>
         <con:property>
-          <con:name>PID_1</con:name>
-          <con:value>${#Global#PID_1}</con:value>
+          <con:name>Id</con:name>
+          <con:value>${#Project#Id_0}</con:value>
         </con:property>
       </con:properties>
     </con:config>
